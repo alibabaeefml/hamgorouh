@@ -128,8 +128,20 @@ nav a:hover {
   }
 }
 
-
+.swiper-pagination-bullet-active{
+  background-color: var(--red);
+}
 
 [white-mask] {
   pointer-events: none;
+}
+
+/* Responsive */
+@media screen and (max-width:640px){
+  nav a{
+    mask-image: unset;
+    -webkit-mask-image: unset;
+    width: 100%;
+  }
+ 
 }
