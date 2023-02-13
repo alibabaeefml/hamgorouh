@@ -129,7 +129,7 @@
     </div>
     <div class="wrapper flex flex-col items-center mt-10 relative">
       <!-- notif -->
-      <div class="notif fixed top-56 z-30 xl:container duration-150">
+      <div class="notif hidden fixed top-56 z-30 xl:container duration-150">
         <div class="relative bg-yellow p-5 rounded-lg shadow-md">
           <span class="absolute -top-6 right-0 bg-brown rounded-l-full p-1 px-3 font-bold">اطلاعیه شخصی</span>
           <div class="flex gap-3 items-center">
@@ -158,16 +158,16 @@
       <section class="bg-cover w-full" style="background-image: url(../assets/images/8651335.png)">
         <div class="xl:container mx-auto p-10">
           <!-- title -->
-          <div class="flex items-center justify-between">
-            <div>
+          <div class="flex items-center justify-between max-sm:flex-col">
+            <div class="w-full">
               <h1 class="text-red text-32">مسابقات و رویداد ها</h1>
               <p class="md:w-1/2 h-15 overflow-auto">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
                 ستون و سطرآنچنان که لازم است قرار گیرد.
               </p>
             </div>
-            <div>
-              <a href="" class="duration-300 bg-white hover:bg-yellow p-2 px-3 rounded-lg font-bold border-2 border-[#FF9100]">
+            <div class="w-full max-sm:mt-5">
+              <a href="" class=" bg-white  sm:mr-auto flex w-full sm:w-max active:scale-95 justify-center hover:bg-yellow p-2 px-3 rounded-lg font-bold border-2 border-[#FF9100]">
                 <span class="mdi mdi-format-list-bulleted-square"></span>
                 <span>نمایش همه</span>
               </a>
@@ -176,12 +176,12 @@
         </div>
       </section>
       <!-- events carousel -->
-      <section class="w-full h-[440px]">
+      <section class="w-full h-[440px] mt-16">
         <div class="relative">
           <div class="" carousel>
-            <div class="carousel text-center max-xl:justify-between">
+            <div class="carousel p-10 text-center max-xl:justify-between">
               <div class="flex gap-10 items-center">
-                <div class="carousel-item" index="1">
+                <div class="carousel-item max-lg:hidden relative" index="1">
                   <div class="mask-border">
                     <div class="" mask-url="url(../assets/images/mask56165156.png)">
                       <a href="">
@@ -189,7 +189,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="absolute z-20 top-44 text-18">
+                  <div class="absolute z-20 top-36 text-18">
                     <h2 event-title></h2>
                     <h2 event-year></h2>
                   </div>
@@ -223,7 +223,7 @@
                 </div>
               </div>
               <div class="flex gap-10 items-center" index="4">
-                <div class="carousel-item larger">
+                <div class="carousel-item larger relative">
                   <div class="mask-border">
                     <div class="" mask-url="url(../assets/images/mask53168465.png)">
                       <a href="">
@@ -236,7 +236,7 @@
                     <h2 event-year></h2>
                   </div>
                 </div>
-                <div class="carousel-item" index="5">
+                <div class="carousel-item max-lg:hidden relative" index="5">
                   <div class="mask-border">
                     <div class="" mask-url="url(../assets/images/mask53168465.png)">
                       <a href="">
@@ -244,7 +244,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="absolute z-20 top-44 text-18">
+                  <div class="absolute z-20 top-36 text-18">
                     <h2 event-title></h2>
                     <h2 event-year></h2>
                   </div>
@@ -262,7 +262,7 @@
             </div>
           </div>
           <!-- carousel white mask -->
-          <div class="absolute top-10 xl:-top-5 w-full z-10" style="filter: drop-shadow(0 -50px 27px rgba(0, 0, 0, 0.1))" white-mask>
+          <div class="absolute lg:top-0 xl:top-12  w-full z-10 max-lg:hidden" style="filter: drop-shadow(0 -50px 27px rgba(0, 0, 0, 0.1))" white-mask>
             <img class="w-full h-full object-cover" src="../assets/images/carousel_mask5415313.png" alt="" />
           </div>
         </div>
