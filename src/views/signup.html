@@ -19,6 +19,12 @@
     <!-- main style file -->
     <link rel="stylesheet" href="../assets/css/main.css" />
 
+    <style>
+      label.focus-target {
+        border-right: var(--navy) solid 2px;
+      }
+    </style>
+
     <!-- tailwind exports to -->
     <link rel="stylesheet" href="../../dist/output.css" />
   </head>
@@ -88,7 +94,7 @@
                   id="" />
               </label>
               <a class="bg-navy w-full p-3 text-white text-center rounded-xl" href="./main.html">
-                <button type="submit">ثبت نام</button>
+                <button type="submit" class="active:scale-90 hover:brightness-90">ثبت نام</button>
               </a>
               <div class="text-navy text-14 flex max-md:flex-col justify-between">
                 <span>

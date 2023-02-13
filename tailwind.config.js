@@ -8,7 +8,8 @@ module.exports = {
         yellow:'#F7F5EB',
         navy:'#12263A',
         red:'#FF4A4A',
-        gray:'#A2A2A1'
+        gray:'#A2A2A1',
+        green:'#38C972',
       },
       fontSize:{
         '32':['32px',{

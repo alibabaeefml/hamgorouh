@@ -5,6 +5,7 @@
   --navy: #12263a;
   --red: #ff4a4a;
   --gray: #a2a2a1;
+  --green:#38C972;
 }
 
 /* fonts */
@@ -30,9 +31,7 @@ label {
   transition: 0.3s;
 }
 
-label.focus-target {
-  border-right: var(--navy) solid 2px;
-}
+
 
 label.focus-target>[focus-target] {
   scale: 0.7;

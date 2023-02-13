@@ -29,17 +29,20 @@
       <div class="bg-yellow p-5">
         <div class="xl:container mx-auto flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <a href="./main.html" class="bg-red w-20 h-20 max-sm:w-10 max-sm:h-10 rounded-full flex items-center justify-center"> 
-             <img class="w-1/2 h-1/2 object-cover" src="../assets/images/Apple-Logo.png" alt="" />
+            <a href="./main.html" class="bg-red w-20 h-20 max-sm:w-10 max-sm:h-10 rounded-full flex items-center justify-center">
+              <img class="w-1/2 h-1/2 object-cover" src="../assets/images/Apple-Logo.png" alt="" />
             </a>
-            <h2 class="text-24 max-sm:text-16 font-bold ">به سامانه همگروه خوش آمدید!</h2>
+            <h2 class="text-24 max-sm:text-16 font-bold">به سامانه همگروه خوش آمدید!</h2>
           </div>
-          
-          <div class="flex items-center gap-3 " dir="ltr" profile>
-           
-            <div class="flex items-center border-navy hover:border-red border-2 bg-white rounded-full relative" onclick="$(this).toggleClass('rounded-full border-none rounded-t-xl');$(this).find('[drop-down]').toggle();
+
+          <div class="flex items-center gap-3" dir="ltr" profile>
+            <div
+              class="flex items-center border-navy hover:border-red border-2 bg-white rounded-full relative"
+              onclick="$(this).toggleClass('rounded-full border-none rounded-t-xl');$(this).find('[drop-down]').toggle();
               $('[user-actions]').toggleClass('max-sm:hidden')
-              " tabindex="1" onfocusout="$(this).addClass('rounded-full');$(this).removeClass('border-none rounded-t-xl');
+              "
+              tabindex="1"
+              onfocusout="$(this).addClass('rounded-full');$(this).removeClass('border-none rounded-t-xl');
               $(this).find('[drop-down]').hide();$('[user-actions]').addClass('max-sm:hidden')">
               <div class="w-10 h-10 rounded-full">
                 <img class="object-cover w-full h-full rounded-full" src="../assets/images/contact_1.jpg" alt="" />
@@ -48,9 +51,8 @@
                 <span class="">علی بابائی</span>
                 <span class="mdi mdi-chevron-down"></span>
               </span>
-              <div class="bg-white sm:rounded-b-xl rounded-md absolute top-10 z-20
-               left-0 sm:w-full  w-40 shadow-md hidden" drop-down dir="rtl">
-                <ul class="flex flex-col p-1 gap-y-1 ">
+              <div class="bg-white sm:rounded-b-xl rounded-md absolute top-10 z-20 left-0 sm:w-full w-40 shadow-md hidden" drop-down dir="rtl">
+                <ul class="flex flex-col p-1 gap-y-1">
                   <li>
                     <a class="flex justify-start gap-1 hover:text-red hover:fill-red" href="">
                       <span class="mdi mdi-account-outline"></span>
@@ -58,8 +60,7 @@
                     </a>
                   </li>
                   <li>
-                    <a onmousedown="window.location.assign('./login.html')"
-                      class="flex justify-start gap-1 hover:text-red hover:fill-red">
+                    <a onmousedown="window.location.assign('./login.html')" class="flex justify-start gap-1 hover:text-red hover:fill-red">
                       <span class="mdi mdi-logout"></span>
                       <span>خروج از حساب</span>
                     </a>
@@ -68,10 +69,12 @@
               </div>
             </div>
             <button>
-              <span class="mdi mdi-menu text-24 sm:hidden" onclick="$('[nav]').toggleClass('max-sm:hidden');;$(this).toggleClass('mdi-menu mdi-close')"></span>
+              <span
+                class="mdi mdi-menu text-24 sm:hidden"
+                onclick="$('[nav]').toggleClass('max-sm:hidden');;$(this).toggleClass('mdi-menu mdi-close')"></span>
             </button>
             <div class="">
-              <ul class="flex gap-3 items-center  text-[24px] max-sm:hidden" user-actions>
+              <ul class="flex gap-3 items-center text-[24px] max-sm:hidden" user-actions>
                 <li>
                   <a href="" class="relative badge"><span class="mdi mdi-bell-outline"></span></a>
                 </li>
@@ -90,7 +93,7 @@
       <div class="bg-brown sm:p-7 sm:pb-0 max-sm:hidden" nav>
         <nav class="xl:container max-sm:w-full mx-auto flex max-sm:items-center justify-between">
           <div class="max-sm:w-full">
-            <ul class="flex max-sm:flex-col  gap-3 text-[16px] text-[#746F6C] fill-[#746F6C]">
+            <ul class="flex max-sm:flex-col gap-3 text-[16px] text-[#746F6C] fill-[#746F6C]">
               <li class="relative">
                 <a href="./main.html" class="active">
                   <span class="mdi mdi-home"></span>
@@ -281,12 +284,11 @@
             <div class="w-1/3">
               <span class="absolute -top-6 text-20 right-0 bg-brown rounded-l-full p-2 px-5 font-bold">اخبار عمومی</span>
               <!-- swiper navigation -->
-              <div class="absolute -top-4  right-32 flex gap-2 items-center">
+              <div class="absolute -top-4 right-32 flex gap-2 items-center">
                 <span
                   class="text-red border-red border-2 mdi mdi-chevron-right bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"></span>
-                  <span
-                  class="text-red border-red border-2 mdi mdi-chevron-left
-                   bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"></span>
+                <span
+                  class="text-red border-red border-2 mdi mdi-chevron-left bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"></span>
               </div>
               <p class="overflow-hidden p-5">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
@@ -299,21 +301,17 @@
             </div>
             <!-- swiper -->
             <div class="w-3/4">
-              <div class="swiper ">
+              <div class="swiper">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    slide 1
-                  </div>
-                  <div class="swiper-slide">
-                    slide 2
-                  </div>
+                  <div class="swiper-slide">slide 1</div>
+                  <div class="swiper-slide">slide 2</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      
+
       <footer class="relative w-full mt-32 bg-yellow p-5 text-center">
         <span class="absolute top-0 left-[calc(50%_-_88px)]">
           <div class="absolute top-3 left-8 flex gap-2 items-center z-20">
@@ -467,6 +465,7 @@
           img: "../assets/images/561653.jpg",
           text: "مسابقه داستان قرآنی",
           year: "1401",
+          link:"./matches.html",
           carousel_index: 2,
         },
         {
@@ -505,9 +504,11 @@
         $("[index]").each((i, e) => {
           $(events).each((i, event) => {
             if (Number($(e).attr("index")) == event.carousel_index) {
-              $(e).find("img").attr("src", event.img);
-              $(e).find("[event-title]").text(event.text);
-              $(e).find("[event-year]").text(event.year);
+              const {img, text, year, link} = event;
+              $(e).find("img").attr("src", img);
+              $(e).find("[event-title]").text(text);
+              $(e).find("[event-year]").text(year);
+              $(e).find("a").attr("href", link);
             }
           });
         });
@@ -538,7 +539,7 @@
     </script>
     <!-- news swiper -->
     <script>
-      const news_swiper = new Swiper('.news-swiper');
+      const news_swiper = new Swiper(".news-swiper");
     </script>
     <!-- on dom ready -->
     <script>

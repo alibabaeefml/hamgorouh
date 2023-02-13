@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>همگروه | ورود</title>
 
     <!-- ------------------------------------ -->
@@ -12,86 +11,97 @@
     <!-- styles -->
 
     <!-- animate on scroll -->
-    <link rel="stylesheet" href="../assets/css/aos.css">
+    <link rel="stylesheet" href="../assets/css/aos.css" />
 
     <!-- main style file -->
-    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/main.css" />
 
     <!-- icon resource -->
-    <link rel="stylesheet" href="../assets/icon/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../assets/icon/css/materialdesignicons.min.css" />
+    
+    <style>
+      label.focus-target {
+        border-right: var(--navy) solid 2px;
+      }
+    </style>
 
     <!-- tailwind exports to -->
-    <link rel="stylesheet" href="../../dist/output.css">
-</head>
+    <link rel="stylesheet" href="../../dist/output.css" />
+  </head>
 
-<body class="farhang text-16 text-navy overflow-hidden">
+  <body class="farhang text-16 text-navy overflow-hidden">
     <div class="wrapper h-screen flex items-center justify-center gap-3">
-        <!-- login -->
-        <section class="md:w-[60%] " data-aos="fade-left">
-            <div class="flex flex-col items-center text-center">
-                <div class="bg-brown w-24 h-24 rounded-full flex items-center justify-center">
-                    <img class="w-1/2 h-1/2 object-cover" src="../assets/images/Apple-Logo.png" alt="">
+      <!-- login -->
+      <section class="md:w-[60%]" data-aos="fade-left">
+        <div class="flex flex-col items-center text-center">
+          <div class="bg-brown w-24 h-24 rounded-full flex items-center justify-center">
+            <img class="w-1/2 h-1/2 object-cover" src="../assets/images/Apple-Logo.png" alt="" />
+          </div>
+          <h1 class="text-32">به سامانه همگروه خوش آمدید!</h1>
+          <div class="mt-5 bg-brown md:w-1/2 p-10 rounded-xl">
+            <h1 class="text-32">ورود</h1>
+            <p>لطفا اطلاعات خود را به صورت صحیح وارد کنید</p>
+            <form action="" class="flex gap-6 flex-col text-right mt-10">
+              <label class="cursor-text bg-yellow p-3 rounded-xl relative group">
+                <div focus-target class="absolute top-4 right-5 text-gray flex items-center">
+                  <i class="mdi mdi-account-outline"></i>
+                  <span class="">نام کاربری</span>
                 </div>
-                <h1 class="text-32">به سامانه همگروه خوش آمدید!</h1>
-                <div class="mt-5 bg-brown md:w-1/2 p-10 rounded-xl">
-                    <h1 class="text-32">ورود</h1>
-                    <p>لطفا اطلاعات خود را به صورت صحیح وارد کنید</p>
-                    <form action="" class="flex gap-6 flex-col text-right mt-10">
-                        <label class="cursor-text bg-yellow p-3 rounded-xl relative group">
-                            <div focus-target class="absolute top-4 right-5 text-gray flex items-center">
-                                <i class="mdi mdi-account-outline "></i>
-                                <span class="">نام کاربری</span>
-                            </div>
-                            <span onclick="$(this).parent().find('input').val('');$(this).hide()" input-reset
-                                class="absolute left-5 top-5 cursor-pointer hidden">
-                                <i class="mdi mdi-close"></i></span>
-                            <input class="text-14 w-full mt-3" 
-                            oninput="this.value ? $(this).parent().find('[input-reset]').show() :
+                <span onclick="$(this).parent().find('input').val('');$(this).hide()" input-reset class="absolute left-5 top-5 cursor-pointer hidden">
+                  <i class="mdi mdi-close"></i>
+                </span>
+                <input
+                  class="text-14 w-full mt-3"
+                  oninput="this.value ? $(this).parent().find('[input-reset]').show() :
                             $(this).parent().find('[input-reset]').hide()
                             "
-                                type="text" name="" id="">
-                        </label>
-                        <label class="cursor-text bg-yellow p-3 rounded-xl relative">
+                  type="text"
+                  name=""
+                  id="" />
+              </label>
+              <label class="cursor-text bg-yellow p-3 rounded-xl relative">
+                <div focus-target class="absolute top-4 text-gray right-5 flex items-center">
+                  <i class="mdi mdi-lock-outline"></i>
+                  <span class="">رمز عبور</span>
+                </div>
 
-                            <div focus-target class="absolute top-4 text-gray right-5 flex items-center">
-                                <i class=" mdi mdi-lock-outline "></i>
-                                <span class="">رمز عبور</span>
-                            </div>
-                            
-                            <span onclick="$(this).parent().find('input').val('');$(this).hide()" input-reset
-                                class="absolute left-5 top-5 cursor-pointer hidden">
-                                <i class="mdi mdi-close"></i></span>
-                            <input class="text-14 w-full mt-3" 
-                            oninput="this.value ? $(this).parent().find('[input-reset]').show() :
+                <span onclick="$(this).parent().find('input').val('');$(this).hide()" input-reset class="absolute left-5 top-5 cursor-pointer hidden">
+                  <i class="mdi mdi-close"></i>
+                </span>
+                <input
+                  class="text-14 w-full mt-3"
+                  oninput="this.value ? $(this).parent().find('[input-reset]').show() :
                             $(this).parent().find('[input-reset]').hide()
                             "
-                                type="password" name="" id="">
-                        </label>
-                        <a class="bg-navy w-full p-3 text-white text-center rounded-xl" href="./main.html">
-                            <button type="submit">ورود</button>
-                        </a>
-                        <div class="text-navy text-14 flex max-md:flex-col justify-between">
-                            <span>حساب کاربری ندارید؟ <a href="./signup.html">ثبت نام</a></span>
-                            <a href="./forgotpassword.html">آیا رمز خود را فراموش کرده اید؟</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-        <section class="w-[40%] max-md:hidden">
-            <div class="bg-brown h-screen relative"  data-aos="fade-right">
-                <img class="w-full h-full object-cover" src="../assets/images/omid-armin-LRJkKZ5zOSM-unsplash.png"
-                    alt="">
-                <span class="absolute bottom-20 left-1/2 -translate-x-16 text-white text-24"
-                    onload="$(this).css({left:$(this)})">بازار بزرگ تهران</span>
-            </div>
-        </section>
+                  type="password"
+                  name=""
+                  id="" />
+              </label>
+              <a class="bg-navy w-full p-3 text-white text-center rounded-xl active:scale-90 hover:brightness-150" href="./main.html">
+                <button type="submit" >ورود</button>
+              </a>
+              <div class="text-navy text-14 flex max-md:flex-col justify-between">
+                <span>
+                  حساب کاربری ندارید؟
+                  <a href="./signup.html">ثبت نام</a>
+                </span>
+                <a href="./forgotpassword.html">آیا رمز خود را فراموش کرده اید؟</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="w-[40%] max-md:hidden">
+        <div class="bg-brown h-screen relative" data-aos="fade-right">
+          <img class="w-full h-full object-cover" src="../assets/images/omid-armin-LRJkKZ5zOSM-unsplash.png" alt="" />
+          <span class="absolute bottom-20 left-1/2 -translate-x-16 text-white text-24" onload="$(this).css({left:$(this)})">بازار بزرگ تهران</span>
+        </div>
+      </section>
     </div>
     <!-- Js -->
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
     <script src="../assets/js/aos.js"></script>
     <script src="../assets/js/main.js"></script>
-</body>
-
+  </body>
 </html>
