@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>همگروه | صفحه اصلی</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>همگروه | صفحه اصلی</title>
+    <!-- ------------------------------------ -->
 
-  <!-- ------------------------------------ -->
+    <!-- styles -->
 
-  <!-- styles -->
+    <!-- animate on scroll -->
+    <link rel="stylesheet" href="../assets/css/aos.css" />
 
-  <!-- animate on scroll -->
-  <link rel="stylesheet" href="../assets/css/aos.css" />
+    <!-- icon resource -->
+    <link rel="stylesheet" href="../assets/icon/css/materialdesignicons.min.css" />
 
-  <!-- icon resource -->
-  <link rel="stylesheet" href="../assets/icon/css/materialdesignicons.min.css" />
+    <!-- main style file -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
 
-  <!-- swiper style -->
-  <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <!-- tailwind exports to -->
+    <link rel="stylesheet" href="../../dist/output.css" />
+  </head>
 
-  <!-- main style file -->
-  <link rel="stylesheet" href="../assets/css/main.css" />
-
-  <!-- tailwind exports to -->
-  <link rel="stylesheet" href="../../dist/output.css" />
-</head>
-
-<body class="farhang text-16 text-navy overflow-x-hidden">
-  <div class="sticky top-0 z-50" data-aos="fade-down ">
-    <!-- user bar -->
+  <body class="farhang text-16 text-navy overflow-x-hidden">
+    <div class="sticky top-0 z-50" data-aos="fade-down ">
+      <!-- user bar -->
     <div class="bg-yellow p-5">
       <div class="xl:container mx-auto flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="bg-red w-20 h-20 rounded-full flex items-center justify-center">
-            <img class="w-1/2 h-1/2 object-cover" src="../assets/images/Apple-Logo.png" alt="" />
-          </div>
-          <h2 class="text-24 font-bold">به سامانه همگروه خوش آمدید!</h2>
+          <a href="./main.html" class="bg-red w-20 h-20 max-sm:w-10 max-sm:h-10 rounded-full flex items-center justify-center"> 
+           <img class="w-1/2 h-1/2 object-cover" src="../assets/images/Apple-Logo.png" alt="" />
+          </a>
+          <h2 class="text-24 max-sm:text-16 font-bold ">به سامانه همگروه خوش آمدید!</h2>
         </div>
-        <div class="flex items-center gap-3" dir="ltr">
-          <div class="flex items-center border-navy hover:border-red border-2 bg-white rounded-full relative"
-            onclick="$(this).toggleClass('rounded-full border-none rounded-t-xl');$(this).find('[drop-down]').toggle();"
-            tabindex="1"
-            onfocusout="$(this).addClass('rounded-full');$(this).removeClass('border-none rounded-t-xl');$(this).find('[drop-down]').hide();">
+        
+        <div class="flex items-center gap-3 " dir="ltr" profile>
+         
+          <div class="flex items-center border-navy hover:border-red border-2 bg-white rounded-full relative" onclick="$(this).toggleClass('rounded-full border-none rounded-t-xl');
+          $(this).find('[drop-down]').toggle();
+            $('[user-actions]').toggleClass('max-sm:hidden');" tabindex="1" 
+            onfocusout="$(this).addClass('rounded-full');$(this).removeClass('border-none rounded-t-xl');
+            $(this).find('[drop-down]').hide();$('[user-actions]').addClass('max-sm:hidden')">
+
             <div class="w-10 h-10 rounded-full">
               <img class="object-cover w-full h-full rounded-full" src="../assets/images/contact_1.jpg" alt="" />
             </div>
-            <span class="p-1 cursor-pointer">
-              <span>علی بابائی</span>
+            <span class="p-1 cursor-pointer max-sm:hidden">
+              <span class="">علی بابائی</span>
               <span class="mdi mdi-chevron-down"></span>
             </span>
-            <div class="bg-white rounded-b-xl absolute top-10 left-0 w-full hidden shadow-md" drop-down dir="rtl">
-              <ul class="flex flex-col p-1 gap-y-1">
+            <div class="bg-white sm:rounded-b-xl rounded-md absolute top-10 z-20
+             left-0 sm:w-full w-40 shadow-md hidden" drop-down dir="rtl">
+              <ul class="flex flex-col p-1 gap-y-1 ">
                 <li>
                   <a class="flex justify-start gap-1 hover:text-red hover:fill-red" href="">
                     <span class="mdi mdi-account-outline"></span>
@@ -68,8 +69,11 @@
               </ul>
             </div>
           </div>
-          <div>
-            <ul class="flex gap-3 items-center text-[24px]">
+          <!-- nav toggle btn -->
+          <button class="mdi mdi-menu text-24 sm:hidden" onclick="$('[nav]').toggleClass('max-sm:hidden');$(this).toggleClass('mdi-menu mdi-close')" nav-toggle>
+          </button>
+          <div class="">
+            <ul class="flex gap-3 items-center  text-[24px] max-sm:hidden" user-actions>
               <li>
                 <a href="" class="relative badge"><span class="mdi mdi-bell-outline"></span></a>
               </li>
@@ -85,10 +89,10 @@
       </div>
     </div>
     <!-- nav bar -->
-    <div class="bg-brown p-7 pb-0">
-      <nav class="xl:container mx-auto flex justify-between">
-        <div class="">
-          <ul class="flex gap-3 text-[16px] text-[#746F6C] fill-[#746F6C]">
+    <div class="bg-brown sm:p-7 sm:pb-0 max-sm:hidden" nav>
+      <nav class="xl:container max-sm:w-full mx-auto flex max-sm:items-center justify-between">
+        <div class="max-sm:w-full">
+          <ul class="flex max-sm:flex-col  gap-3 text-[16px] text-[#746F6C] fill-[#746F6C]">
             <li class="relative">
               <a href="./main.html" class="active">
                 <span class="mdi mdi-home"></span>
@@ -115,232 +119,301 @@
             </li>
           </ul>
         </div>
-        <div>
+        <div class="max-sm:hidden">
           <span>صفحه -</span>
           <span>صفحه اصلی</span>
         </div>
       </nav>
     </div>
-  </div>
-  <div class="wrapper flex flex-col items-center mt-10 relative">
-    <!-- notif -->
-    <div class="notif absolute top-0 xl:container duration-150 hidden">
-      <div class="relative bg-yellow p-5 rounded-lg shadow-md">
-        <span class="absolute -top-6 right-0 bg-brown rounded-l-full p-1 px-3 font-bold">اطلاعیه شخصی</span>
-        <div class="flex gap-3 items-center">
-          <span class="mdi mdi-message-alert"></span>
-          <div class="relative flex justify-center">
-            <p onload="$(this).attr('title',this.innerText)" class="h-5 overflow-hidden">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و
-              متون بلکه روزنامه و مجله در
-              ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای
-              کاربردی می باشد، کتابهای
-              زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت
-              بیشتری را برای طراحان
-              رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که
-              تمام و دشواری موجود در
-              ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی
-              سوالات پیوسته اهل دنیای موجود
-              طراحی اساسا مورد استفاده قرار گیرد.
-            </p>
-          </div>
-          <a href="" class="flex items-center font-bold">
-            <span>مشاهده</span>
-            <span class="mdi mdi-arrow-left"></span>
-          </a>
-          <span class="px-[5px] text-[15px] mdi mdi-close rounded-lg border-2 border-navy/25 cursor-pointer"
-            onclick="$('.notif').has(this).fadeOut()"></span>
-        </div>
-      </div>
     </div>
-    <!-- Matches and Events -->
-    <section class="bg-cover w-full" style="background-image: url(../assets/images/8651335.png)">
-      <div class="xl:container mx-auto p-10">
-        <!-- title -->
-        <div class=" flex items-center justify-between">
-          <div>
-            <h1 class="text-red text-32">مسابقات و رویداد ها</h1>
-            <p class="md:w-1/2 h-15 overflow-auto">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و
-              متون بلکه روزنامه و مجله در
-              ستون و سطرآنچنان که لازم است قرار گیرد.
-            </p>
-          </div>
-          <div>
-            <a href=""
-              class="duration-300 bg-white hover:bg-yellow p-2 px-3 rounded-lg font-bold border-2 border-[#FF9100]">
-              <span class="mdi mdi-format-list-bulleted-square"></span>
-              <span>نمایش همه</span>
+    <div class="wrapper flex flex-col items-center mt-10 relative">
+      <!-- notif -->
+      <div class="notif fixed top-56 z-30 xl:container duration-150">
+        <div class="relative bg-yellow p-5 rounded-lg shadow-md">
+          <span class="absolute -top-6 right-0 bg-brown rounded-l-full p-1 px-3 font-bold">اطلاعیه شخصی</span>
+          <div class="flex gap-3 items-center">
+            <span class="mdi mdi-message-alert"></span>
+            <div class="relative flex justify-center">
+              <p class="h-5 overflow-hidden">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+                ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای
+                زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان
+                رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در
+                ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود
+                طراحی اساسا مورد استفاده قرار گیرد.
+              </p>
+            </div>
+            <a href="" class="flex items-center font-bold">
+              <span>مشاهده</span>
+              <span class="mdi mdi-arrow-left"></span>
             </a>
+            <span
+              class="px-[5px] text-[15px] mdi mdi-close rounded-lg border-2 border-navy/25 cursor-pointer"
+              onclick="$('.notif').has(this).fadeOut()"></span>
           </div>
         </div>
       </div>
-    </section>
+      <!-- Matches and Events -->
+      <section class="bg-cover w-full" style="background-image: url(../assets/images/8651335.png)">
+        <div class="xl:container mx-auto p-10">
+          <!-- title -->
+          <div class="flex items-center justify-between">
+            <div>
+              <h1 class="text-red text-32">مسابقات و رویداد ها</h1>
+              <p class="md:w-1/2 h-15 overflow-auto">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+                ستون و سطرآنچنان که لازم است قرار گیرد.
+              </p>
+            </div>
+            <div>
+              <a href="" class="duration-300 bg-white hover:bg-yellow p-2 px-3 rounded-lg font-bold border-2 border-[#FF9100]">
+                <span class="mdi mdi-format-list-bulleted-square"></span>
+                <span>نمایش همه</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- events carousel -->
+      <section class="w-full h-[440px]">
+        <div class="relative">
+          <div class="" carousel>
+            <div class="carousel text-center max-xl:justify-between">
+              <div class="flex gap-10 items-center">
+                <div class="carousel-item" index="1">
+                  <div class="mask-border">
+                    <div class="" mask-url="url(../assets/images/mask56165156.png)">
+                      <a href="">
+                        <img class="w-full h-full object-cover" src="" alt="" />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="absolute z-20 top-44 text-18">
+                    <h2 event-title></h2>
+                    <h2 event-year></h2>
+                  </div>
+                </div>
+                <div class="carousel-item larger relative" index="2">
+                  <div class="mask-border">
+                    <div class="" mask-url="url(../assets/images/mask56165156.png)">
+                      <a href="">
+                        <img class="w-full h-full object-cover" src="" alt="" />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="absolute z-20 top-48 text-20">
+                    <h2 event-title></h2>
+                    <h2 event-year></h2>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item largest absolute z-20 right-[calc(50%_-_120px)]" index="3">
+                <div class="mask-border">
+                  <div class="" mask-url="url(../assets/images/mask641651353.png)">
+                    <a href="">
+                      <img class="w-full h-full object-cover" src="" alt="" />
+                    </a>
+                  </div>
+                </div>
+                <div class="absolute z-20 top-50 text-24">
+                  <h2 event-title></h2>
+                  <h2 event-year></h2>
+                </div>
+              </div>
+              <div class="flex gap-10 items-center" index="4">
+                <div class="carousel-item larger">
+                  <div class="mask-border">
+                    <div class="" mask-url="url(../assets/images/mask53168465.png)">
+                      <a href="">
+                        <img class="w-full h-full object-cover" src="" alt="" />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="absolute z-20 top-48 text-20">
+                    <h2 event-title></h2>
+                    <h2 event-year></h2>
+                  </div>
+                </div>
+                <div class="carousel-item" index="5">
+                  <div class="mask-border">
+                    <div class="" mask-url="url(../assets/images/mask53168465.png)">
+                      <a href="">
+                        <img class="w-full h-full object-cover" src="" alt="" />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="absolute z-20 top-44 text-18">
+                    <h2 event-title></h2>
+                    <h2 event-year></h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- carousel nav -->
+            <div class="carousel-nav text-2xl cursor-pointer">
+              <span
+                onclick="change_carousel(false)"
+                class="absolute z-20 top-1/2 right-10 mdi mdi-chevron-right hover:opacity-80 bg-brown w-10 h-10 flex items-center justify-center rounded-full active:scale-90"></span>
+              <span
+                onclick="change_carousel(true)"
+                class="absolute z-20 top-1/2 left-10 mdi mdi-chevron-left hover:opacity-80 bg-brown w-10 h-10 flex items-center justify-center rounded-full active:scale-90"></span>
+            </div>
+          </div>
+          <!-- carousel white mask -->
+          <div class="absolute top-10 xl:-top-5 w-full z-10" style="filter: drop-shadow(0 -50px 27px rgba(0, 0, 0, 0.1))" white-mask>
+            <img class="w-full h-full object-cover" src="../assets/images/carousel_mask5415313.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <!-- recent news and notification -->
+      <section class="mt-16">
+        <!-- title -->
+        <div class="text-center">
+          <h1 class="text-32">آخرین اخبار و اطلاعیه ها</h1>
+          <p class="overflow-auto h-14">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
+            سطرآنچنان که لازم است قرار گیرد.
+          </p>
+        </div>
+        <div class="mt-5">
+          <!-- news swiper -->
+          <div class="relative bg-yellow xl:container rounded-lg shadow-md flex">
+            <!-- swiper title -->
+            <div class="w-1/3">
+              <span class="absolute -top-6 text-20 right-0 bg-brown rounded-l-full p-2 px-5 font-bold">اخبار عمومی</span>
+              <!-- swiper navigation -->
+              <div class="absolute -top-4  right-32 flex gap-2 items-center">
+                <span
+                  class="text-red border-red border-2 mdi mdi-chevron-right bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"></span>
+                  <span
+                  class="text-red border-red border-2 mdi mdi-chevron-left
+                   bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"></span>
+              </div>
+              <p class="overflow-hidden p-5">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+                ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای
+                زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان
+                رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در
+                ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود
+                طراحی اساسا مورد استفاده قرار گیرد.
+              </p>
+            </div>
+            <!-- swiper -->
+            <div class="w-3/4">
+              <div class="swiper ">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    slide 1
+                  </div>
+                  <div class="swiper-slide">
+                    slide 2
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Js -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/js/aos.js"></script>
+    <script src="../assets/js/main.js"></script>
     <!-- events carousel -->
-    <section class="w-full">
-      <div class="relative">
-        <div class="" carousel>
-          <div class="carousel text-center max-xl:justify-between">
-            <div class="flex gap-10 items-center">
-              <div class="carousel-item " index="1">
-                <div class="mask-border">
-                  <div class="" mask-url="url(../assets/images/mask56165156.png)">
-                    <a href="">
-                      <img class="w-full h-full object-cover" src="" alt="" />
-                    </a>
-                  </div>
-                </div>
-                <div class="absolute z-20 top-44 text-18">
-                  <h2 event-title></h2>
-                  <h2 event-year></h2>
-                </div>
-              </div>
-              <div class="carousel-item larger relative" index="2">
-                <div class="mask-border">
-                  <div class="" mask-url="url(../assets/images/mask56165156.png)">
-                    <a href="">
-                      <img class="w-full h-full object-cover" src="" alt="" />
-                    </a>
-                  </div>
-                </div>
-                <div class="absolute z-20 top-48 text-20">
-                  <h2 event-title> </h2>
-                  <h2 event-year></h2>
-                </div>
-              </div>
+    <script>
+      // to fetch from database
+      const events = [
+        {
+          img: "../assets/images/56161.png",
+          text: "مسابقه نهج البلاغه",
+          year: "1401",
+          carousel_index: 1,
+        },
+        {
+          img: "../assets/images/561653.jpg",
+          text: "مسابقه داستان قرآنی",
+          year: "1401",
+          carousel_index: 2,
+        },
+        {
+          img: "../assets/images/561531313.jpg",
+          text: "مسابقه حفظ قرآن",
+          year: "1401",
+          carousel_index: 3,
+        },
+        {
+          img: "../assets/images/5616515.jpg",
+          text: "مسابقه حفظ احادیث",
+          year: "1401",
+          carousel_index: 4,
+        },
+        {
+          img: "../assets/images/56419841653.jpg",
+          text: "مسابقه تفسیر",
+          year: "1401",
+          carousel_index: 5,
+        },
+        {
+          img: "../assets/images/5616515.jpg",
+          text: "مسابقه ترتیل",
+          year: "1401",
+          carousel_index: 6,
+        },
+      ];
 
-            </div>
+      // carousel loop control
+      let timeout;
 
-            <div class="carousel-item largest absolute z-20 right-[calc(50%_-_120px)]" index="3">
-              <div class="mask-border">
-                <div class="" mask-url="url(../assets/images/mask641651353.png)">
-                  <a href="">
-                    <img class="w-full h-full object-cover" src="" alt="" />
-                  </a>
-                </div>
-              </div>
-              <div class="absolute z-20 top-50 text-24">
-                <h2 event-title> </h2>
-                <h2 event-year></h2>
-              </div>
-            </div>
-            <div class="flex gap-10 items-center" index="4">
-              <div class="carousel-item larger">
-                <div class="mask-border">
-                  <div class="" mask-url="url(../assets/images/mask53168465.png)">
-                    <a href="">
-                      <img class="w-full h-full object-cover" src="" alt="" />
-                    </a>
+      const set_carousel_data = () => {
+        clearTimeout(timeout); // prevents running multiple change_carousel function
 
-                  </div>
-                </div>
-                <div class="absolute z-20 top-48 text-20">
-                  <h2 event-title></h2>
-                  <h2 event-year></h2>
-                </div>
-              </div>
-              <div class="carousel-item " index="5">
-                <div class="mask-border">
-                  <div class="" mask-url="url(../assets/images/mask53168465.png)">
-                    <a href="">
-                      <img class="w-full h-full object-cover" src="" alt="" />
-                    </a>
+        // set carousel view based on events data array
+        $("[index]").each((i, e) => {
+          $(events).each((i, event) => {
+            if (Number($(e).attr("index")) == event.carousel_index) {
+              $(e).find("img").attr("src", event.img);
+              $(e).find("[event-title]").text(event.text);
+              $(e).find("[event-year]").text(event.year);
+            }
+          });
+        });
+        // set carousel change per milisceconds
+        timeout = setTimeout(() => {
+          change_carousel(true);
+        }, 2500);
+      };
 
-                  </div>
-                </div>
-                <div class="absolute z-20 top-44 text-18">
-                  <h2 event-title></h2>
-                  <h2 event-year></h2>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <!-- carousel nav -->
-          <div class="carousel-nav text-2xl  cursor-pointer">
-            <span onclick="change_carousel(false)"
-              class="absolute z-20 top-1/2 right-10 mdi mdi-chevron-right hover:opacity-80 bg-brown w-10 h-10 flex items-center justify-center rounded-full active:scale-90"></span>
-            <span onclick="change_carousel(true)"
-              class="absolute z-20 top-1/2 left-10 mdi mdi-chevron-left hover:opacity-80 bg-brown w-10 h-10 flex items-center justify-center rounded-full active:scale-90"></span>
-          </div>
-        </div>
-        <!-- carousel white mask -->
-        <div class="absolute top-10 w-full z-10" style="filter:drop-shadow(0 -2px 27px rgba(0,0,0,.1))" white-mask>
-          <img class="w-full h-full object-cover" src="../assets/images/carousel_mask5415313.png" alt="">
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Js -->
-  <script src="../assets/js/jquery.min.js"></script>
-  <script src="../assets/js/swiper-bundle.min.js"></script>
-  <script src="../assets/js/aos.js"></script>
-  <script src="../assets/js/main.js"></script>
-  <script>
-    const events = [{
-      img: '../assets/images/56161.png',
-      text: 'مسابقه نهج البلاغه',
-      year: '1401',
-      carousel_index: 1
-    },
-    {
-      img: '../assets/images/561653.jpg',
-      text: 'مسابقه داستان قرآنی',
-      year: '1401',
-      carousel_index: 2
-    }, {
-      img: '../assets/images/561531313.jpg',
-      text: 'مسابقه حفظ قرآن',
-      year: '1401',
-      carousel_index: 3
-    }, {
-      img: '../assets/images/5616515.jpg',
-      text: 'مسابقه حفظ احادیث',
-      year: '1401',
-      carousel_index: 4
-    }, {
-      img: '../assets/images/56419841653.jpg',
-      text: 'مسابقه تفسیر',
-      year: '1401',
-      carousel_index: 5
-    },
-    ];
-    let timeout;
-    const set_carousel_data = () => {
-      clearTimeout(timeout)
-      $('[index]').each((i, e) => {
+      const change_carousel = (increment) => {
         $(events).each((i, event) => {
-          if (Number($(e).attr('index')) == event.carousel_index) {
-            $(e).find('img').attr('src', event.img);
-            $(e).find('[event-title]').text(event.text);
-            $(e).find('[event-year]').text(event.year);
+          // set maximum index based on length of data items of events array
+          let max = events.length;
+
+          if (increment && event.carousel_index < max) {
+            // move to left
+            increment ? event.carousel_index++ : null;
+          } else if (!increment && event.carousel_index > 1) {
+            event.carousel_index--;
+          } else if (event.carousel_index == max) {
+            event.carousel_index = 1;
+          } else if (event.carousel_index == 1) {
+            event.carousel_index = max;
           }
-        })
-      })
-      timeout = setTimeout(() => {
-        change_carousel(true)
-      }, 2500)
-    };
-    const change_carousel = (increment) => {
-      $(events).each((i, event) => {
-        if (increment && event.carousel_index < 5) {
-          increment ? event.carousel_index++ : null
-        } else if (!increment && event.carousel_index > 1) {
-          event.carousel_index--
-        }
-        else if (event.carousel_index == 5) {
-          event.carousel_index = 1
-        }
-        else if (event.carousel_index == 1) {
-          event.carousel_index = 5
-        }
-      })
-      set_carousel_data();
-    }
-    set_carousel_data();
-
-  </script>
-</body>
-
+        });
+        set_carousel_data();
+      };
+    </script>
+    <!-- news swiper -->
+    <script>
+      const news_swiper = new Swiper('.news-swiper');
+    </script>
+    <!-- on dom ready -->
+    <script>
+      $(function () {
+        set_carousel_data();
+      });
+    </script>
+  </body>
 </html>

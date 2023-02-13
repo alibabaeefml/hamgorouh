@@ -13,9 +13,9 @@ $(function () {
     // inner
     e.setAttribute('style',`-webkit-mask-box-image:${$(e).attr("mask-url")};
     mask-image:${$(e).attr("mask-url")};
-    -webkit-mask-box-image-width: 10px;`);
+    -webkit-mask-box-image-width: 10px; mask-repeat: no-repeat;`);
     // outer
     $(e).parent().attr('style',`-webkit-mask-box-image:${$(e).attr("mask-url")};
-    mask-image:${$(e).attr("mask-url")}`)
+    mask-image:${$(e).attr("mask-url")}; mask-repeat: no-repeat;`)
   });
 });
