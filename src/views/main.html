@@ -16,6 +16,9 @@
     <!-- icon resource -->
     <link rel="stylesheet" href="../assets/icon/css/materialdesignicons.min.css" />
 
+    <!-- swiper style -->
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" />
+
     <!-- main style file -->
     <link rel="stylesheet" href="../assets/css/main.css" />
 
@@ -107,7 +110,7 @@
                 </a>
               </li>
               <li class="">
-                <a href="./matches.html" class="">
+                <a href="./singlematch.html" class="">
                   <span class="mdi mdi-flag-checkered"></span>
                   <span class="">مسابقات</span>
                 </a>
@@ -167,7 +170,9 @@
               </p>
             </div>
             <div class="w-full max-sm:mt-5">
-              <a href="" class=" bg-white  sm:mr-auto flex w-full sm:w-max active:scale-95 justify-center hover:bg-yellow p-2 px-3 rounded-lg font-bold border-2 border-[#FF9100]">
+              <a
+                href=""
+                class="bg-white sm:mr-auto flex w-full sm:w-max active:scale-95 justify-center hover:bg-yellow p-2 px-3 rounded-lg font-bold border-2 border-[#FF9100]">
                 <span class="mdi mdi-format-list-bulleted-square"></span>
                 <span>نمایش همه</span>
               </a>
@@ -176,7 +181,7 @@
         </div>
       </section>
       <!-- events carousel -->
-      <section class="w-full h-[440px] mt-16">
+      <section class="w-full h-[320px] sm:h-[440px] mt-28">
         <div class="relative">
           <div class="" carousel>
             <div class="carousel p-10 text-center max-xl:justify-between">
@@ -194,7 +199,7 @@
                     <h2 event-year></h2>
                   </div>
                 </div>
-                <div class="carousel-item larger relative" index="2">
+                <div class="carousel-item larger max-sm:hidden relative" index="2">
                   <div class="mask-border">
                     <div class="" mask-url="url(../assets/images/mask56165156.png)">
                       <a href="">
@@ -202,7 +207,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="absolute z-20 top-48 text-20">
+                  <div class="absolute z-20 lg:top-48 text-20">
                     <h2 event-title></h2>
                     <h2 event-year></h2>
                   </div>
@@ -222,8 +227,8 @@
                   <h2 event-year></h2>
                 </div>
               </div>
-              <div class="flex gap-10 items-center" index="4">
-                <div class="carousel-item larger relative">
+              <div class="flex gap-10 items-center">
+                <div class="carousel-item larger relative max-sm:hidden" index="4">
                   <div class="mask-border">
                     <div class="" mask-url="url(../assets/images/mask53168465.png)">
                       <a href="">
@@ -231,7 +236,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="absolute z-20 top-48 text-20">
+                  <div class="absolute z-20 lg:top-48 text-20">
                     <h2 event-title></h2>
                     <h2 event-year></h2>
                   </div>
@@ -255,42 +260,45 @@
             <div class="carousel-nav text-2xl cursor-pointer">
               <span
                 onclick="change_carousel(false)"
-                class="absolute z-20 top-1/2 right-10 mdi mdi-chevron-right hover:opacity-80 bg-brown w-10 h-10 flex items-center justify-center rounded-full active:scale-90"></span>
+                class="absolute z-20 max-sm:top-56 lg:top-1/2 right-10 mdi mdi-chevron-right hover:opacity-80 bg-brown w-10 h-10 flex items-center justify-center rounded-full active:scale-90"></span>
               <span
                 onclick="change_carousel(true)"
-                class="absolute z-20 top-1/2 left-10 mdi mdi-chevron-left hover:opacity-80 bg-brown w-10 h-10 flex items-center justify-center rounded-full active:scale-90"></span>
+                class="absolute z-20 max-sm:top-56 lg:top-1/2 left-10 mdi mdi-chevron-left hover:opacity-80 bg-brown w-10 h-10 flex items-center justify-center rounded-full active:scale-90"></span>
             </div>
           </div>
           <!-- carousel white mask -->
-          <div class="absolute lg:top-0 xl:top-12  w-full z-10 max-lg:hidden" style="filter: drop-shadow(0 -50px 27px rgba(0, 0, 0, 0.1))" white-mask>
+          <div class="absolute lg:top-16 xl:top-12 w-full z-10 max-lg:hidden" style="filter: drop-shadow(0 -50px 27px rgba(0, 0, 0, 0.1))" white-mask>
             <img class="w-full h-full object-cover" src="../assets/images/carousel_mask5415313.png" alt="" />
           </div>
         </div>
       </section>
       <!-- recent news and notification -->
-      <section class="mt-16">
+      <section class="lg:mt-24 mt-10">
         <!-- title -->
         <div class="text-center">
           <h1 class="text-32">آخرین اخبار و اطلاعیه ها</h1>
-          <p class="overflow-auto h-14">
+          <p class="overflow-auto sm:h-14">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
             سطرآنچنان که لازم است قرار گیرد.
           </p>
         </div>
-        <div class="mt-5">
+        <div class="mt-20">
           <!-- news swiper -->
-          <div class="relative bg-yellow xl:container rounded-lg shadow-md flex">
+          <div class="news-swiper-container relative bg-yellow xl:container h-max sm:h-[290px] p-5 rounded-lg shadow-md flex max-sm:flex-col">
             <!-- swiper title -->
-            <div class="w-1/3">
+            <div class="sm:w-1/3">
               <span class="absolute -top-6 text-20 right-0 bg-brown rounded-l-full p-2 px-5 font-bold">اخبار عمومی</span>
+
               <!-- swiper navigation -->
-              <div class="absolute -top-4 right-32 flex gap-2 items-center">
+              <div class="absolute sm:-top-3 max-sm:bottom-5 max-sm:left-[43%] flex gap-2 items-center" news-nav>
                 <span
-                  class="text-red border-red border-2 mdi mdi-chevron-right bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"></span>
+                  class="text-red border-red border-2 mdi mdi-chevron-right bg-white active:scale-95 rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"
+                  swiper-right></span>
                 <span
-                  class="text-red border-red border-2 mdi mdi-chevron-left bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"></span>
+                  class="text-red border-red border-2 mdi mdi-chevron-left bg-white active:scale-95 rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"
+                  swiper-left></span>
               </div>
-              <p class="overflow-hidden p-5">
+              <p class="overflow-hidden h-[250px] p-5">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
                 ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای
                 زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان
@@ -300,11 +308,78 @@
               </p>
             </div>
             <!-- swiper -->
-            <div class="w-3/4">
-              <div class="swiper">
+            <div class="sm:absolute sm:-top-20 sm:left-0 lg:-left-16 mb-10">
+              <div class="swiper max-sm:w-[300px] h-auto news-swiper">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide">slide 1</div>
-                  <div class="swiper-slide">slide 2</div>
+                  <div class="swiper-slide p-5">
+                    <div class="news-card relative w-[280px] h-[330px] duration-300 p-3 rounded-lg shadow-lg hover:scale-[1.01] bg-white">
+                      <div class="rounded-xl h-1/2 relative">
+                        <img class="rounded-xl object-cover w-full h-full" src="../assets/images/download_13_4.png" alt="" />
+                        <span class="absolute -bottom-2 bg-white text-red text-[12px] py-1 px-2 rounded-md" center>دسته بندی</span>
+                      </div>
+                      <div class="news-card mt-5 text-right h-1/2 flex flex-col justify-between">
+                        <p class="font-bold">تسهیلگرهای نهادینه‌سازی فرهنگ‌ جامعه اسلامی از منظر قرآن</p>
+                        <p class="text-justify text-[12px] h-11">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،چاپگرها و متون بلکه
+                        </p>
+
+                        <div class="flex mb-3">
+                          <a
+                            class="w-full flex items-center justify-between p-1 rounded-lg duration-300 text-red hover:text-white hover:bg-red"
+                            href="./singlenews.html">
+                            <span class="text-[12px]">ادامه مطلب...</span>
+                            <span class="mdi mdi-arrow-left"></span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide p-5">
+                    <div class="news-card relative w-[280px] h-[330px] duration-300 p-3 rounded-lg shadow-lg hover:scale-[1.01] bg-white">
+                      <div class="rounded-xl h-1/2 relative">
+                        <img class="rounded-xl object-cover w-full h-full" src="../assets/images/download_13_4.png" alt="" />
+                        <span class="absolute -bottom-2 bg-white text-red text-[12px] py-1 px-2 rounded-md" center>دسته بندی</span>
+                      </div>
+                      <div class="news-card mt-5 text-right h-1/2 flex flex-col justify-between">
+                        <p class="font-bold">تسهیلگرهای نهادینه‌سازی فرهنگ‌ جامعه اسلامی از منظر قرآن</p>
+                        <p class="text-justify text-[12px] h-11">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،چاپگرها و متون بلکه
+                        </p>
+
+                        <div class="flex mb-3">
+                          <a
+                            class="w-full flex items-center justify-between p-1 rounded-lg duration-300 text-red hover:text-white hover:bg-red"
+                            href="./singlenews.html">
+                            <span class="text-[12px]">ادامه مطلب...</span>
+                            <span class="mdi mdi-arrow-left"></span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide p-5">
+                    <div class="news-card relative w-[280px] h-[330px] duration-300 p-3 rounded-lg shadow-lg hover:scale-[1.01] bg-white">
+                      <div class="rounded-xl h-1/2 relative">
+                        <img class="rounded-xl object-cover w-full h-full" src="../assets/images/download_13_4.png" alt="" />
+                        <span class="absolute -bottom-2 bg-white text-red text-[12px] py-1 px-2 rounded-md" center>دسته بندی</span>
+                      </div>
+                      <div class="news-card mt-5 text-right h-1/2 flex flex-col justify-between">
+                        <p class="font-bold">تسهیلگرهای نهادینه‌سازی فرهنگ‌ جامعه اسلامی از منظر قرآن</p>
+                        <p class="text-justify text-[12px] h-11">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،چاپگرها و متون بلکه
+                        </p>
+
+                        <div class="flex mb-3">
+                          <a
+                            class="w-full flex items-center justify-between p-1 rounded-lg duration-300 text-red hover:text-white hover:bg-red"
+                            href="./singlenews.html">
+                            <span class="text-[12px]">ادامه مطلب...</span>
+                            <span class="mdi mdi-arrow-left"></span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -465,7 +540,7 @@
           img: "../assets/images/561653.jpg",
           text: "مسابقه داستان قرآنی",
           year: "1401",
-          link:"./matches.html",
+          link: "./singlematch.html",
           carousel_index: 2,
         },
         {
@@ -539,12 +614,41 @@
     </script>
     <!-- news swiper -->
     <script>
-      const news_swiper = new Swiper(".news-swiper");
+      const news_swiper = new Swiper(".news-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+          nextEl: "[swiper-left]",
+          prevEl: "[swiper-right]",
+        },
+        breakpoints: {
+          1200: {
+            slidesPerView: 3,
+          },
+          800: {
+            slidesPerView: 2,
+          },
+        },
+      });
     </script>
     <!-- on dom ready -->
     <script>
+      const swiper_width = () => {
+        $(".news-swiper").width($(".news-swiper-container").width() - $(".news-swiper-container").width() * 0.3);
+        $("[news-nav]").css("left", $(".news-swiper").width());
+      };
       $(function () {
         set_carousel_data();
+        if (innerWidth > 640) swiper_width();
+      });
+
+      $(window).resize((e) => {
+        if (innerWidth > 640) {
+          swiper_width();
+        } else {
+          $(".news-swiper, [news-nav]").attr("style", "");
+        }
       });
     </script>
   </body>
