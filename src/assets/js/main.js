@@ -36,3 +36,5 @@ $(function () {
     $(e).css('left', `calc(50% - ${$(e).width() / 2}px)` );
   });
 });
+
+

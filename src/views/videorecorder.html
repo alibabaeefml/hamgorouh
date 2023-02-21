@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>همگروه | تایم لاین مسابقات</title>
+    <title>همگروه | ضبط ویدیو</title>
 
     <!-- ------------------------------------ -->
 
@@ -25,12 +25,39 @@
     <!-- main style file -->
     <link rel="stylesheet" href="../assets/css/main.css" />
 
-    <!-- tailwind exports to -->
-    <link rel="stylesheet" href="../../dist/output.css" />
+     <!-- tailwind compiler style -->
+  <script src="../assets/js/tailwind3.2.6.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brown: '#EAE0DA',
+            yellow: '#F7F5EB',
+            navy: '#12263A',
+            red: '#FF4A4A',
+            gray: '#A2A2A1',
+            green: '#38C972',
+          },
+          fontSize: {
+            '32': ['32px', {
+              fontWeight: '700',
+            }],
+            '24': '24px',
+            '20': '20px',
+            '18': '18px',
+            '16': '16px',
+            '14': '14px',
+            '12': '12px',
+          },
+        },
+      },
+    }
+  </script>
   </head>
 
   <body class="farhang text-16 text-navy overflow-x-hidden">
-    <div class="sticky top-0 z-50" data-aos="fade-down ">
+    <div class="sticky top-0 z-50" >
       <!-- user bar -->
       <div class="bg-yellow p-5">
         <div class="xl:container mx-auto flex items-center justify-between">
@@ -134,21 +161,21 @@
     </div>
     <div class="wrapper flex flex-col items-center mt-10 relative">
       <!-- exam -->
-      <section class="mt-16 flex items-center w-full p-10 xl:container justify-between gap-3">
+      <section class=" flex max-sm:flex-col items-center w-full p-10 xl:container justify-between gap-3">
         <!-- exam timeline -->
-        <div class="w-[20%] relative overflow-hidden">
+        <div class="w-[90%] sm:w-[20%] relative overflow-hidden">
           <span class="border-dashed border-[1px] absolute z-[-1] h-full right-[15px]"></span>
           <ul class="flex flex-col gap-8">
             <li>
               <a href="" class="flex items-center gap-3">
                 <span class="bg-brown w-8 h-8 flex items-center justify-center rounded-full">1</span>
-                <span class="text-14 font-bold">مدل آپلود فایل</span>
+                <span class="text-14 ">مدل آپلود فایل</span>
               </a>
             </li>
             <li>
               <a href="" class="flex items-center gap-3">
                 <span class="bg-brown w-8 h-8 flex items-center justify-center rounded-full">2</span>
-                <span class="text-14">مدل ضبط ویدیو</span>
+                <span class="text-14 font-bold">مدل ضبط ویدیو</span>
               </a>
             </li>
             <li>
@@ -166,9 +193,9 @@
           </ul>
         </div>
         <!-- exam view -->
-        <div class="w-[80%] flex flex-col sm:items-center justify-center">
+        <div class="w-full max-sm:p-3 sm:w-[80%] flex flex-col sm:items-center justify-center">
           <h1 class="text-18 font-bold">کاربر گرامی فایل خود را بارگذاری کنید</h1>
-          <div class="mt-10 h-[330px] relative bg-[#F7F5EB] rounded-3xl rounded-bl-none sm:w-4/6 p-16">
+          <div class="mt-10 h-[400px] relative bg-[#F7F5EB] rounded-3xl rounded-bl-none sm:w-4/6 p-16">
             <form action="" class="w-full h-full rounded-xl duration-300 bg-white/30 hover:bg-white border-dashed border-2">
               <label class="cursor-pointer w-full h-full flex items-center justify-center" upload_panel>
                 <div class="flex flex-col items-center">
@@ -180,7 +207,9 @@
               <div class="w-full h-full hidden relative" preview_panel>
                 <button
                   title="حذف فایل منتخب"
-                  class="mdi mdi-delete active:scale-90 hover:brightness-90 text-red bg-white shadow-md w-6 h-6 flex items-center justify-center rounded-full absolute z-10 top-5 right-5"
+                  class="mdi mdi-delete active:scale-90  text-32
+                  hover:brightness-90 text-red bg-white shadow-md w-12 h-12 flex
+                   items-center justify-center rounded-full absolute z-10 top-5 right-5"
                   type="button"
                   onclick="$('[upload_panel]').show();$('[preview_panel]').hide();$('form').get(0).reset();$('[type=submit]').attr('disabled','disabled')"></button>
                 <video class="object-cover w-full h-full" controls uploaded_video src=""></video>

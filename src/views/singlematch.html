@@ -22,12 +22,39 @@
     <!-- main style file -->
     <link rel="stylesheet" href="../assets/css/main.css" />
 
-    <!-- tailwind exports to -->
-    <link rel="stylesheet" href="../../dist/output.css" />
+  <!-- tailwind compiler style -->
+  <script src="../assets/js/tailwind3.2.6.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brown: '#EAE0DA',
+            yellow: '#F7F5EB',
+            navy: '#12263A',
+            red: '#FF4A4A',
+            gray: '#A2A2A1',
+            green: '#38C972',
+          },
+          fontSize: {
+            '32': ['32px', {
+              fontWeight: '700',
+            }],
+            '24': '24px',
+            '20': '20px',
+            '18': '18px',
+            '16': '16px',
+            '14': '14px',
+            '12': '12px',
+          },
+        },
+      },
+    }
+  </script>
   </head>
 
   <body class="farhang text-16 text-navy overflow-x-hidden">
-    <div class="sticky top-0 z-50" data-aos="fade-down ">
+    <div class="sticky top-0 z-50" >
       <!-- user bar -->
       <div class="bg-yellow p-5">
         <div class="xl:container mx-auto flex items-center justify-between">
