@@ -23,8 +23,13 @@ input {
   all: unset;
 }
 
-hr{
-opacity: .2;
+:disabled {
+  filter: brightness(.8)!important;
+  cursor: not-allowed!important;  
+}
+
+hr {
+  opacity: 0.2;
 }
 
 ::-webkit-scrollbar {

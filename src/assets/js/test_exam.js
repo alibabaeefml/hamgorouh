@@ -1,4 +1,4 @@
-// declartions
+// Hamgorouh Quiz Module
 
 const quiz_resource = {
   questions: [
@@ -43,10 +43,30 @@ let sample_quiz = {
       question: "کدام گزینه صحیح است؟",
       choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
     },
+    {
+      id: "gnfnfm",
+      question: "کدام گزینه صحیح است؟",
+      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
+    },
+    {
+      id: "gdngn",
+      question: "کدام گزینه صحیح است؟",
+      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
+    },
+    {
+      id: "dfngdnd",
+      question: "کدام گزینه صحیح است؟",
+      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
+    },
+    {
+      id: "fdndgn",
+      question: "کدام گزینه صحیح است؟",
+      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
+    },
   ],
   options: {
     name: "سوالات مسابقه",
-    total_time: 3600,
+    total_time: 5,
     time_per_question: 60,
     is_randomly: true,
   },
@@ -63,14 +83,14 @@ const question_index = {
   },
 };
 
-const create_choice = (q) => {
+const create_choices = (q) => {
   q.choices.map((a) => {
-    let choice_el = ` <label class="container">
+    let choices_el = ` <label class="container">
   ${a}
-<input type="radio" name="${q.id}" id="" />
+<input type="radio" name="${q.id}" data="${a}" />
 <span class="checkmark"></span>
 </label>`;
-    $(`#${q.id} choice`).append(choice_el);
+    $(`#${q.id} choices`).append(choices_el);
   });
 };
 
@@ -79,13 +99,17 @@ const create_question = (q, i) => {
   <question>
     <h2>${i + 1 + "- " + q.question}</h2>
   </question>
-  <choice class="">
-  </choice>
+  <choices class="">
+  </choices>
   </single-question>`;
 
   $("exam").append(question_el);
-  create_choice(q);
+  create_choices(q);
   question_index.set(i);
+  $("#next_question_btn").attr("disabled", "disabled");
+  $("choices input").change(() => {
+    $("#next_question_btn").removeAttr("disabled");
+  });
 };
 
 const create_quiz = () => {
@@ -98,26 +122,54 @@ const create_quiz = () => {
     });
   }
   $("[total-questions]").text(sample_quiz.questions.length);
+  quiz_timer();
 };
 
 const remove_question = (id) => {
   $(`single-question#${id}`).remove();
 };
 
-const next_question = (el) => {
-  const q = sample_quiz.questions;
-  const i = question_index.get();
-
-  if (i < q.length - 1) {
-    create_question(q[i + 1], i + 1);
+const next_question = () => {
+  if ($("#submit_exam_btn").not("disabled")) {
+    const q = sample_quiz.questions;
+    const i = question_index.get();
     remove_question(q[i].id);
-  } else {
-    $(el).toggleClass("hidden");
+    question_index.set(i + 1);
+    create_question(q[question_index.get()], question_index.get());
+
+    if (!(question_index.get() < q.length - 1)) {
+      $("#next_question_btn").toggleClass("hidden");
+    }
   }
-  
 };
 
 const answers = {};
+
+const quiz_timer = () => {
+  let total = sample_quiz.options.total_time;
+  var timer = new easytimer.Timer({countdown: true, startValues: {seconds: 0}});
+
+  timer.start({startValues: {seconds: total}, target: {seconds: 0}});
+  $("[total-time]").html(timer.getTimeValues().toString());
+
+  timer.addEventListener("secondsUpdated", function (e) {
+    $("[total-time]").html(timer.getTimeValues().toString());
+  });
+
+  timer.addEventListener("targetAchieved", function (e) {
+    console.log("time finished");
+    clearInterval(interval);
+  });
+
+  // progress
+  var height = 330;
+  var relation = height / total;
+  let interval = setInterval(() => {
+    height = height - relation;
+    $("[progress]").height(height);
+    $("[time-percentage]").text(parseInt(relation / 100));
+  }, 1000);
+};
 
 $(() => {
   create_quiz();

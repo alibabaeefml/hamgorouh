@@ -622,6 +622,10 @@ video {
   top: -1.5rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .bottom-20 {
   bottom: 5rem;
 }
@@ -1019,6 +1023,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.max-h-\[250px\] {
+  max-height: 250px;
 }
 
 .w-1 {

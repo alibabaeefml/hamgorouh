@@ -216,16 +216,16 @@
             </div>
             <!-- exam quiz -->
             <exam class="max-h-[250px] overflow-auto flex flex-col"></exam>
-            <exam-actions class="flex justify-end">
+            <exam-actions class="flex gap-3 justify-end">
               <button class="py-2 px-3 bg-brown rounded-xl hidden">
                 <span class="mdi mdi-arrow-right"></span>
                 <span>سوال قبلی</span>
               </button>
-              <button onclick="next_question(this)" class="py-2 px-3 bg-brown rounded-xl hover:brightness-90 active:scale-95">
+              <button id="next_question_btn" onclick="next_question()" class="py-2 px-3 bg-brown rounded-xl hover:brightness-90 active:scale-95">
                 <span>سوال بعدی</span>
                 <span class="mdi mdi-arrow-left"></span>
               </button>
-              <button class="py-2 px-3 bg-green rounded-xl hover:brightness-90 active:scale-95">
+              <button id="submit_exam_btn" class="py-2 px-3 bg-green rounded-xl hover:brightness-90 active:scale-95">
                 <span>پایان آزمون</span>
                 <span class="mdi mdi-arrow-left"></span>
               </button>
@@ -234,12 +234,12 @@
           <div class="h-full">
             <exam-progress
               class="relative overflow-hidden flex flex-col items-center justify-between w-full h-[330px] rounded-3xl bg-yellow p-2 text-14 font-bold">
-              <div class="flex flex-col justify-between items-center">
+              <div class="flex flex-col justify-between items-center relative">
                 <span>زمان کل</span>
-                <span total-time>۰۲:۲۵:۳۴</span>
+                <span class="absolute top-5" total-time>۰۲:۲۵:۳۴</span>
               </div>
-              <span class="" time-percentage>۸۵٪</span>
-              <span class="absolute bottom-0 bg-green w-full h-full z-10 mix-blend-multiply"></span>
+              <span class="" dir="ltr"><span time-percentage>100</span>٪</span>
+              <span progress class="absolute bottom-0 bg-green w-full h-full z-10 mix-blend-multiply"></span>
             </exam-progress>
           </div>
         </div>
@@ -382,7 +382,7 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
     <script src="../assets/js/aos.js"></script>
-
+    <script src="../assets/js/easytimer.js"></script>
     <script src="../assets/js/main.js"></script>
 
     <!-- test exam js -->
