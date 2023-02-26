@@ -4,11 +4,11 @@ const quiz_resource = {
   questions: [
     {
       question: {type: String, value: "کدام گزینه صحیح است؟", default: "default question"},
-      answers: [
+      choices: [
         {
           type: String || Number,
           value: "گزینه",
-          default: "default answer",
+          default: "default choice",
         },
       ],
     },
@@ -26,45 +26,99 @@ let sample_quiz = {
     {
       id: "dv31f353",
       question: "کدام گزینه صحیح است؟",
-      answers: ["گزینه", "گزینه", "گزینه", "گزینه"],
-    }
+      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
+    },
+    {
+      id: "65g1fg6ngn",
+      question: "کدام گزینه صحیح است؟",
+      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
+    },
+    {
+      id: "fbf5b16",
+      question: "کدام گزینه صحیح است؟",
+      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
+    },
+    {
+      id: "613fsbfb",
+      question: "کدام گزینه صحیح است؟",
+      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
+    },
   ],
   options: {
     name: "سوالات مسابقه",
-    view_per_question: true,
     total_time: 3600,
     time_per_question: 60,
     is_randomly: true,
   },
 };
 
-const create_quiz = () => {
-  const create_answer = (q) => {
-    q.answers.map((a) => {
-      let answer_el = ` <label class="container">
-    ${a}
-  <input type="radio" name="${q.id}" id="" />
-  <span class="checkmark"></span>
-  </label>`;
-      $(`#${q.id} answer`).append(answer_el);
-    });
-  };
+const question_index = {
+  current_index: null,
+  get() {
+    return this.current_index;
+  },
+  set(i) {
+    this.current_index = i;
+    $("[current-question-number]").text(i + 1);
+  },
+};
 
-  sample_quiz.questions.map((q, i) => {
-
-    let question_el = `<single-question class="flex flex-col justify-between gap-5" id="${q.id}">
-    <question>
-      <h2>${q.question}</h2>
-    </question>
-    <answer class="">
-    </answer>
-    </single-question>`;
-
-    $("exam").append(question_el);
-    create_answer(q);
+const create_choice = (q) => {
+  q.choices.map((a) => {
+    let choice_el = ` <label class="container">
+  ${a}
+<input type="radio" name="${q.id}" id="" />
+<span class="checkmark"></span>
+</label>`;
+    $(`#${q.id} choice`).append(choice_el);
   });
 };
 
+const create_question = (q, i) => {
+  let question_el = `<single-question class="flex flex-col justify-between gap-5" id="${q.id}">
+  <question>
+    <h2>${i + 1 + "- " + q.question}</h2>
+  </question>
+  <choice class="">
+  </choice>
+  </single-question>`;
+
+  $("exam").append(question_el);
+  create_choice(q);
+  question_index.set(i);
+};
+
+const create_quiz = () => {
+  if (sample_quiz.options.time_per_question) {
+    create_question(sample_quiz.questions[0], 0);
+    question_index.set(0);
+  } else {
+    sample_quiz.questions.map((q, i) => {
+      create_question(q, i);
+    });
+  }
+  $("[total-questions]").text(sample_quiz.questions.length);
+};
+
+const remove_question = (id) => {
+  $(`single-question#${id}`).remove();
+};
+
+const next_question = (el) => {
+  const q = sample_quiz.questions;
+  const i = question_index.get();
+
+  if (i < q.length - 1) {
+    create_question(q[i + 1], i + 1);
+    remove_question(q[i].id);
+  } else {
+    $(el).toggleClass("hidden");
+  }
+  
+};
+
+const answers = {};
+
 $(() => {
-  create_quiz()
+  create_quiz();
 });
