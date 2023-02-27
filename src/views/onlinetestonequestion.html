@@ -209,9 +209,9 @@
               <div class="flex flex-col items-center">
                 <h1 class="text-14">
                   زمان پاسخ دهی به سوال
-                  <span>1</span>
+                  <span current-question-number></span>
                 </h1>
-                <h4>۰۰:۰۵:۳۴</h4>
+                <span single-question-timer></span>
               </div>
             </div>
             <!-- exam quiz -->
@@ -225,7 +225,7 @@
                 <span>سوال بعدی</span>
                 <span class="mdi mdi-arrow-left"></span>
               </button>
-              <button id="submit_exam_btn" class="py-2 px-3 bg-green rounded-xl hover:brightness-90 active:scale-95">
+              <button id="submit_exam_btn" class="hidden py-2 px-3 bg-green rounded-xl hover:brightness-90 active:scale-95">
                 <span>پایان آزمون</span>
                 <span class="mdi mdi-arrow-left"></span>
               </button>

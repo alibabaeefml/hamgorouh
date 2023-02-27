@@ -66,7 +66,7 @@ let sample_quiz = {
   ],
   options: {
     name: "سوالات مسابقه",
-    total_time: 5,
+    total_time: 600,
     time_per_question: 60,
     is_randomly: true,
   },
@@ -106,22 +106,20 @@ const create_question = (q, i) => {
   $("exam").append(question_el);
   create_choices(q);
   question_index.set(i);
-  $("#next_question_btn").attr("disabled", "disabled");
-  $("choices input").change(() => {
-    $("#next_question_btn").removeAttr("disabled");
-  });
 };
 
 const create_quiz = () => {
   if (sample_quiz.options.time_per_question) {
     create_question(sample_quiz.questions[0], 0);
     question_index.set(0);
+    question_timer();
   } else {
     sample_quiz.questions.map((q, i) => {
       create_question(q, i);
     });
   }
   $("[total-questions]").text(sample_quiz.questions.length);
+
   quiz_timer();
 };
 
@@ -130,16 +128,14 @@ const remove_question = (id) => {
 };
 
 const next_question = () => {
-  if ($("#submit_exam_btn").not("disabled")) {
-    const q = sample_quiz.questions;
-    const i = question_index.get();
-    remove_question(q[i].id);
-    question_index.set(i + 1);
-    create_question(q[question_index.get()], question_index.get());
-
-    if (!(question_index.get() < q.length - 1)) {
-      $("#next_question_btn").toggleClass("hidden");
-    }
+  const q = sample_quiz.questions;
+  const i = question_index.get();
+  remove_question(q[i].id);
+  question_index.set(i + 1);
+  create_question(q[question_index.get()], question_index.get());
+  question_timer();
+  if (!(question_index.get() < q.length - 1)) {
+    $("#next_question_btn, #submit_exam_btn").toggleClass("hidden");
   }
 };
 
@@ -147,7 +143,7 @@ const answers = {};
 
 const quiz_timer = () => {
   let total = sample_quiz.options.total_time;
-  var timer = new easytimer.Timer({countdown: true, startValues: {seconds: 0}});
+  let timer = new easytimer.Timer({countdown: true, startValues: {seconds: 0}});
 
   timer.start({startValues: {seconds: total}, target: {seconds: 0}});
   $("[total-time]").html(timer.getTimeValues().toString());
@@ -157,18 +153,46 @@ const quiz_timer = () => {
   });
 
   timer.addEventListener("targetAchieved", function (e) {
-    console.log("time finished");
     clearInterval(interval);
+    $("[progress]").height(0);
+    $("[time-percentage]").html(0);
   });
 
   // progress
-  var height = 330;
-  var relation = height / total;
-  let interval = setInterval(() => {
-    height = height - relation;
-    $("[progress]").height(height);
-    $("[time-percentage]").text(parseInt(relation / 100));
-  }, 1000);
+  let height = 330,
+    step = height / total,
+    percentage = 100,
+    percentage_step = 100 / total,
+    interval = setInterval(() => {
+      height = height - step;
+      $("[progress]").height(height);
+      percentage = percentage - percentage_step;
+      $("[time-percentage]").html(parseInt(percentage));
+    }, 1000);
+};
+
+const question_timer = {
+  question_time: sample_quiz.options.time_per_question,
+
+  timer: new easytimer.Timer({countdown: true, startValues: {seconds: 0}}),
+  get() {
+    return this.timer;
+  },
+  set() {
+    timer.start({startValues: {seconds: question_time}, target: {seconds: 0}});
+    $("[single-question-timer]").html(timer.getTimeValues().toString());
+
+    timer.addEventListener("secondsUpdated", function (e) {
+      $("[single-question-timer]").html(timer.getTimeValues().toString());
+    });
+
+    timer.addEventListener("targetAchieved", function (e) {
+      $("[single-question-timer]").html(0);
+    });
+  },
+  stop(){
+  this.timer.stop()
+  }
 };
 
 $(() => {
