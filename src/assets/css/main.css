@@ -70,7 +70,7 @@ a {
   right: 0;
 }
 
-nav a {
+.header nav a {
   width: 121px;
   height: 34px;
   display: flex;
@@ -85,8 +85,8 @@ nav a {
   align-items: center;
 }
 
-nav a.active,
-nav a:hover {
+.header nav a.active,
+.header nav a:hover {
   background-color: white;
   fill: var(--red);
   color: var(--red);
@@ -128,20 +128,13 @@ nav a:hover {
   height: 353px;
 }
 
-@keyframes fade {
-  0% {
-    opacity: 1;
-  }
 
-  50% {
-    opacity: 0.3;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
+[categories] ul li a.active{
+  color: red;
+} 
+[categories] ul li a.active .mdi{
+  opacity: 1!important;
+} 
 .swiper-pagination-bullet-active {
   background-color: var(--red);
 }
@@ -150,9 +143,12 @@ nav a:hover {
   pointer-events: none;
 }
 
+.pagination a.active {
+  background-color: var(--brown);
+}
 /* Responsive */
 @media screen and (max-width: 640px) {
-  nav a {
+  .header nav a {
     mask-image: unset;
     -webkit-mask-image: unset;
     width: 100%;

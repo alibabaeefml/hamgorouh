@@ -33,7 +33,7 @@ $(function () {
   // center absolute elements
   $("[center]").each((i, e) => {
     
-    $(e).css('left', `calc(50% - ${$(e).width() / 2}px)` );
+    $(e).css('left', `calc(50% - ${$(e).outerWidth() / 2}px)` );
   });
 });
 

@@ -25,39 +25,11 @@
     <!-- main style file -->
     <link rel="stylesheet" href="../assets/css/main.css" />
 
-     <!-- tailwind compiler style -->
-  <script src="../assets/js/tailwind3.2.6.js"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brown: '#EAE0DA',
-            yellow: '#F7F5EB',
-            navy: '#12263A',
-            red: '#FF4A4A',
-            gray: '#A2A2A1',
-            green: '#38C972',
-          },
-          fontSize: {
-            '32': ['32px', {
-              fontWeight: '700',
-            }],
-            '24': '24px',
-            '20': '20px',
-            '18': '18px',
-            '16': '16px',
-            '14': '14px',
-            '12': '12px',
-          },
-        },
-      },
-    }
-  </script>
+    <link rel="stylesheet" href="../../dist/output.css" />
   </head>
 
   <body class="farhang text-16 text-navy overflow-x-hidden">
-    <div class="sticky top-0 z-50" >
+    <div class="sticky top-0 z-50">
       <!-- user bar -->
       <div class="bg-yellow p-5">
         <div class="xl:container mx-auto flex items-center justify-between">
@@ -161,7 +133,7 @@
     </div>
     <div class="wrapper flex flex-col items-center mt-10 relative">
       <!-- exam -->
-      <section class=" flex max-sm:flex-col items-center w-full p-10 xl:container justify-between gap-3">
+      <section class="flex max-sm:flex-col items-center w-full p-10 xl:container justify-between gap-3">
         <!-- exam timeline -->
         <div class="w-[90%] sm:w-[20%] relative overflow-hidden">
           <span class="border-dashed border-[1px] absolute z-[-1] h-full right-[15px]"></span>
@@ -207,9 +179,7 @@
               <div class="w-full h-full hidden relative" preview_panel>
                 <button
                   title="حذف فایل منتخب"
-                  class="mdi mdi-delete active:scale-90  text-32
-                  hover:brightness-90 text-red bg-white shadow-md w-12 h-12 flex
-                   items-center justify-center rounded-full absolute z-10 top-5 right-5"
+                  class="mdi mdi-delete active:scale-90 text-32 hover:brightness-90 text-red bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-full absolute z-10 top-5 right-5"
                   type="button"
                   onclick="$('[upload_panel]').show();$('[preview_panel]').hide();$('form').get(0).reset();$('[type=submit]').attr('disabled','disabled')"></button>
                 <video class="object-cover w-full h-full" controls uploaded_video src=""></video>
