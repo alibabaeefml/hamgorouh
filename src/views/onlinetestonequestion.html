@@ -62,7 +62,7 @@
                       <span class="mdi mdi-account-outline"></span>
                       <span>پنل کاربر</span>
                     </a>
-                  </li> 
+                  </li>
                   <li>
                     <a onmousedown="window.location.assign('./login.html')" class="flex justify-start gap-1 hover:text-red hover:fill-red">
                       <span class="mdi mdi-logout"></span>
@@ -162,25 +162,32 @@
         <div class="w-full flex sm:items-center gap-3 justify-center">
           <div class="h-full relative bg-[#F7F5EB] rounded-3xl rounded-bl-none sm:w-4/6 p-5">
             <!-- exam header -->
-            <div class="flex items-center justify-between" exam-header>
-              <h1 class="text-14 font-bold">
-                سوال
-                <span current-question-number></span>
-                از
-                <span total-questions></span>
-              </h1>
-              <div class="flex flex-col items-center">
-                <h1 class="text-14">
-                  زمان پاسخ دهی به سوال
+            <div exam-header>
+              <div class="flex items-center justify-between" per-question>
+                <h1 class="text-14 font-bold">
+                  سوال
                   <span current-question-number></span>
+                  از
+                  <span total-questions></span>
                 </h1>
-                <span single-question-timer></span>
+                <div class="flex flex-col items-center">
+                  <h1 class="text-14">
+                    زمان پاسخ دهی به سوال
+                    <span current-question-number></span>
+                  </h1>
+                  <span single-question-timer></span>
+                </div>
+              </div>
+              <div class="hidden" all-questions-length>
+                <h1 class="text-14 font-bold">
+                  تعداد سوالات:
+                  <span total-questions></span>
+                </h1>
               </div>
             </div>
             <!-- exam quiz -->
             <exam class="max-h-[250px] overflow-auto flex flex-col"></exam>
             <exam-actions class="flex gap-3 justify-end">
-
               <button class="py-2 px-3 bg-brown rounded-xl hidden">
                 <span class="mdi mdi-arrow-right"></span>
                 <span>سوال قبلی</span>
@@ -202,7 +209,10 @@
                 <span>زمان کل</span>
                 <span class="absolute top-5" total-time>۰۲:۲۵:۳۴</span>
               </div>
-              <span class="" dir="ltr"><span time-percentage>100</span>٪</span>
+              <span class="" dir="ltr">
+                <span time-percentage>100</span>
+                ٪
+              </span>
               <span progress class="absolute bottom-0 bg-green w-full h-full z-10 mix-blend-multiply"></span>
             </exam-progress>
           </div>

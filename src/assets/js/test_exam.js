@@ -43,7 +43,7 @@ let sample_quiz = {
     id: "13s5v13sfb",
     name: "آزمون رشته انتخابی",
     total_time: 1000,
-    time_per_question: 100,
+    time_per_question: null,
     is_randomly: true,
   },
 };
@@ -95,14 +95,16 @@ const create_question = (q, i) => {
 };
 
 const create_quiz = () => {
-  if (sample_quiz.options.time_per_question) {
+  if (sample_quiz.options.time_per_question ) {
     create_question(sample_quiz.questions[0], 0);
     question_index.set(0);
     question_timer.set();
+   
   } else {
     sample_quiz.questions.map((q, i) => {
       create_question(q, i);
     });
+    $("[all-questions-length], [per-question]").toggleClass("hidden")
   }
   $("[total-questions]").text(sample_quiz.questions.length);
 
@@ -199,7 +201,7 @@ const single_answer = {
 };
 
 const post_answer = (choice_data, question_id) => {
-  $("[undo_answer_btn]").addClass("hidden");
+  $(`#${question_id} [undo_answer_btn]`).addClass("hidden");
   $(`[data="undo_${choice_data}"]`).removeClass("hidden");
   single_answer.answer.question_id = question_id;
   single_answer.answer.selected_choice = choice_data;
