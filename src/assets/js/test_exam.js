@@ -25,7 +25,7 @@ let sample_quiz = {
   questions: [
     {
       id: "dv31f353",
-      question: "کدام گزینه صحیح است؟",
+      question: "کدام یک صحیح می باشد؟",
       choices: ["dsvsfbsdfdgn", "fbfddbdb", "fdbfbdbd", "dfbdbdbd"],
     },
     {
@@ -43,7 +43,7 @@ let sample_quiz = {
     id: "13s5v13sfb",
     name: "آزمون رشته انتخابی",
     total_time: 1000,
-    time_per_question: null,
+    time_per_question: false,
     is_randomly: true,
   },
 };
@@ -60,7 +60,6 @@ const question_index = {
 };
 
 const create_choices = (q) => {
-  
   q.choices.map((a) => {
     let choice_data = btoa(a).toString();
     let choices_el = ` 
@@ -77,7 +76,7 @@ const create_choices = (q) => {
 `;
     $(`#${q.id} choices`).append(choices_el);
   });
-  $("input").change((e) => post_answer($(e.currentTarget).attr("data"), $("single-question").attr("id")));
+  $(`#${q.id} input`).change((e) => post_answer($(e.currentTarget).attr("data"), q.id));
 };
 
 const create_question = (q, i) => {
@@ -95,16 +94,23 @@ const create_question = (q, i) => {
 };
 
 const create_quiz = () => {
-  if (sample_quiz.options.time_per_question ) {
+  if (sample_quiz.options.is_randomly) {
+   
+    shuffleArray(sample_quiz.questions);
+    sample_quiz.questions.map((e) => {
+      shuffleArray(e.choices);
+    });
+  }
+  if (sample_quiz.options.time_per_question) {
     create_question(sample_quiz.questions[0], 0);
     question_index.set(0);
     question_timer.set();
-   
+    $("[exam-header] [per-question]").removeClass("hidden");
   } else {
     sample_quiz.questions.map((q, i) => {
       create_question(q, i);
     });
-    $("[all-questions-length], [per-question]").toggleClass("hidden")
+    $("[exam-header] [all-questions-length]").removeClass("hidden");
   }
   $("[total-questions]").text(sample_quiz.questions.length);
 
@@ -201,6 +207,7 @@ const single_answer = {
 };
 
 const post_answer = (choice_data, question_id) => {
+  console.log(question_id);
   $(`#${question_id} [undo_answer_btn]`).addClass("hidden");
   $(`[data="undo_${choice_data}"]`).removeClass("hidden");
   single_answer.answer.question_id = question_id;
@@ -211,6 +218,14 @@ const post_answer = (choice_data, question_id) => {
 const undo_answer = (undo_btn, question_id) => {
   $(undo_btn).addClass("hidden");
   $(undo_btn).parent().find("input").prop("checked", false);
+};
+
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 };
 
 $(() => {

@@ -634,6 +634,10 @@ video {
   left: 0px;
 }
 
+.left-1 {
+  left: 0.25rem;
+}
+
 .left-1\/2 {
   left: 50%;
 }
@@ -686,6 +690,10 @@ video {
   top: 0px;
 }
 
+.top-1 {
+  top: 0.25rem;
+}
+
 .top-10 {
   top: 2.5rem;
 }
@@ -716,14 +724,6 @@ video {
 
 .top-\[calc\(50\%_-_21px\)\] {
   top: calc(50% - 21px);
-}
-
-.top-1 {
-  top: 0.25rem;
-}
-
-.left-1 {
-  left: 0.25rem;
 }
 
 .isolate {
