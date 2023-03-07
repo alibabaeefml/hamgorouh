@@ -43,7 +43,7 @@ let sample_quiz = {
     id: "13s5v13sfb",
     name: "آزمون رشته انتخابی",
     total_time: 1000,
-    time_per_question: false,
+    time_per_question: 20,
     is_randomly: true,
   },
 };
