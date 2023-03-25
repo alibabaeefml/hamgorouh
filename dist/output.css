@@ -726,6 +726,70 @@ video {
   top: calc(50% - 21px);
 }
 
+.right-\[clac\(100\)\] {
+  right: clac(100);
+}
+
+.right-\[127px\] {
+  right: 127px;
+}
+
+.right-\[67px\] {
+  right: 67px;
+}
+
+.right-\[20px\] {
+  right: 20px;
+}
+
+.right-\[80px\] {
+  right: 80px;
+}
+
+.-bottom-4 {
+  bottom: -1rem;
+}
+
+.-bottom-5 {
+  bottom: -1.25rem;
+}
+
+.-bottom-6 {
+  bottom: -1.5rem;
+}
+
+.right-8 {
+  right: 2rem;
+}
+
+.right-32 {
+  right: 8rem;
+}
+
+.right-28 {
+  right: 7rem;
+}
+
+.right-\[100\%\] {
+  right: 100%;
+}
+
+.right-\[\] {
+  right: ;
+}
+
+.right-\[90px\] {
+  right: 90px;
+}
+
+.right-\[calc\(50\%_-_60px\)\] {
+  right: calc(50% - 60px);
+}
+
+.right-\[calc\(50\%_-_50px\)\] {
+  right: calc(50% - 50px);
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -1030,6 +1094,10 @@ video {
   height: 2rem;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
 .h-\[100px\] {
   height: 100px;
 }
@@ -1103,6 +1171,46 @@ video {
   height: 100vh;
 }
 
+.h-\[375px\] {
+  height: 375px;
+}
+
+.h-\[36px\] {
+  height: 36px;
+}
+
+.h-1\/4 {
+  height: 25%;
+}
+
+.h-1\/6 {
+  height: 16.666667%;
+}
+
+.h-2\/4 {
+  height: 50%;
+}
+
+.h-5\/6 {
+  height: 83.333333%;
+}
+
+.h-2\/6 {
+  height: 33.333333%;
+}
+
+.h-\[50px\] {
+  height: 50px;
+}
+
+.h-\[30px\] {
+  height: 30px;
+}
+
+.h-\[40px\] {
+  height: 40px;
+}
+
 .max-h-11 {
   max-height: 2.75rem;
 }
@@ -1149,6 +1257,10 @@ video {
 
 .w-40 {
   width: 10rem;
+}
+
+.w-5\/6 {
+  width: 83.333333%;
 }
 
 .w-6 {
@@ -1206,6 +1318,18 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[120px\] {
+  width: 120px;
+}
+
+.w-\[100px\] {
+  width: 100px;
 }
 
 .max-w-\[280px\] {
@@ -1570,6 +1694,10 @@ video {
 
 .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -2113,6 +2241,11 @@ video {
   border-top-right-radius: 0.75rem;
 }
 
+.rounded-b-none {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
 .rounded-bl {
   border-bottom-left-radius: 0.25rem;
 }
@@ -2471,6 +2604,16 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .pr-5 {
   padding-right: 1.25rem;
 }
@@ -2697,6 +2840,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-brown {
+  --tw-text-opacity: 1;
+  color: rgb(234 224 218 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -3076,6 +3224,15 @@ video {
   }
 }
 
+.focus-within\:outline-none:focus-within {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-within\:outline-navy:focus-within {
+  outline-color: #12263A;
+}
+
 .hover\:scale-\[1\.01\]:hover {
   --tw-scale-x: 1.01;
   --tw-scale-y: 1.01;
@@ -3224,6 +3381,10 @@ video {
 }
 
 @media not all and (min-width: 640px) {
+  .max-sm\:absolute {
+    position: absolute;
+  }
+
   .max-sm\:bottom-5 {
     bottom: 1.25rem;
   }
@@ -3358,8 +3519,16 @@ video {
     width: 33.333333%;
   }
 
+  .sm\:w-1\/6 {
+    width: 16.666667%;
+  }
+
   .sm\:w-4\/6 {
     width: 66.666667%;
+  }
+
+  .sm\:w-5\/6 {
+    width: 83.333333%;
   }
 
   .sm\:w-\[20\%\] {
@@ -3379,6 +3548,14 @@ video {
     width: max-content;
   }
 
+  .sm\:w-2\/6 {
+    width: 33.333333%;
+  }
+
+  .sm\:w-\[280px\] {
+    width: 280px;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3387,8 +3564,20 @@ video {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .sm\:items-center {
     align-items: center;
+  }
+
+  .sm\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between;
   }
 
   .sm\:rounded-xl {
@@ -3482,6 +3671,10 @@ video {
 
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:rounded-bl-none {
