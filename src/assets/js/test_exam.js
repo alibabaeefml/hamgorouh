@@ -23,51 +23,27 @@ const quiz_resource = {
 
 let sample_quiz = {
   questions: [
-    {
+   {
       id: "dv31f353",
-      question: "کدام گزینه صحیح است؟",
-      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
-    },
-    {
-      id: "65g1fg6ngn",
-      question: "کدام گزینه صحیح است؟",
-      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
+      question: "کدام یک صحیح می باشد؟",
+      choices: ["dsvsfbsdfdgn", "fbfddbdb", "fdbfbdbd", "dfbdbdbd"],
     },
     {
       id: "fbf5b16",
       question: "کدام گزینه صحیح است؟",
-      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
+      choices: ["dsdvsvsf", "svssfbsfbfsb", "sfbfbsfbf", "sfbfbfbwb"],
     },
     {
       id: "613fsbfb",
       question: "کدام گزینه صحیح است؟",
-      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
-    },
-    {
-      id: "gnfnfm",
-      question: "کدام گزینه صحیح است؟",
-      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
-    },
-    {
-      id: "gdngn",
-      question: "کدام گزینه صحیح است؟",
-      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
-    },
-    {
-      id: "dfngdnd",
-      question: "کدام گزینه صحیح است؟",
-      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
-    },
-    {
-      id: "fdndgn",
-      question: "کدام گزینه صحیح است؟",
-      choices: ["گزینه", "گزینه", "گزینه", "گزینه"],
+      choices: ["vrbrwb", "fbdbbteb", "fvfbbw", "wvwwbwrbwb"],
     },
   ],
   options: {
-    name: "سوالات مسابقه",
-    total_time: 600,
-    time_per_question: 60,
+    id: "13s5v13sfb",
+    name: "آزمون رشته انتخابی",
+    total_time: 1000,
+    time_per_question: 30,
     is_randomly: true,
   },
 };
@@ -85,13 +61,22 @@ const question_index = {
 
 const create_choices = (q) => {
   q.choices.map((a) => {
-    let choices_el = ` <label class="container">
+    let choice_data = btoa(a).toString();
+    let choices_el = ` 
+    <div class="relative">
+    <label class="container relative">
   ${a}
-<input type="radio" name="${q.id}" data="${a}" />
+<input type="radio" name="${q.id}" data="${choice_data}"  />
 <span class="checkmark"></span>
-</label>`;
+</label>
+
+<button data="undo_${choice_data}" onclick="undo_answer(this,'${q.id}')"
+ class=" hidden absolute top-1 left-1 mdi mdi-close flex items-center justify-center w-6 h-6 rounded-full bg-white shadow-sm text-red active:scale-90" undo_answer_btn ></button>
+  </div>
+`;
     $(`#${q.id} choices`).append(choices_el);
   });
+  $(`#${q.id} input`).change((e) => post_answer($(e.currentTarget).attr("data"), q.id));
 };
 
 const create_question = (q, i) => {
@@ -99,7 +84,7 @@ const create_question = (q, i) => {
   <question>
     <h2>${i + 1 + "- " + q.question}</h2>
   </question>
-  <choices class="">
+  <choices class="relative">
   </choices>
   </single-question>`;
 
@@ -109,14 +94,23 @@ const create_question = (q, i) => {
 };
 
 const create_quiz = () => {
+  if (sample_quiz.options.is_randomly) {
+   
+    shuffleArray(sample_quiz.questions);
+    sample_quiz.questions.map((e) => {
+      shuffleArray(e.choices);
+    });
+  }
   if (sample_quiz.options.time_per_question) {
     create_question(sample_quiz.questions[0], 0);
     question_index.set(0);
-    question_timer();
+    question_timer.set();
+    $("[exam-header] [per-question]").removeClass("hidden");
   } else {
     sample_quiz.questions.map((q, i) => {
       create_question(q, i);
     });
+    $("[exam-header] [all-questions-length]").removeClass("hidden");
   }
   $("[total-questions]").text(sample_quiz.questions.length);
 
@@ -133,13 +127,12 @@ const next_question = () => {
   remove_question(q[i].id);
   question_index.set(i + 1);
   create_question(q[question_index.get()], question_index.get());
-  question_timer();
+  question_timer.stop();
+  question_timer.set();
   if (!(question_index.get() < q.length - 1)) {
-    $("#next_question_btn, #submit_exam_btn").toggleClass("hidden");
+    $("#next_question_btn, #submit_exam_btn").slideToggle();
   }
 };
-
-const answers = {};
 
 const quiz_timer = () => {
   let total = sample_quiz.options.total_time;
@@ -173,26 +166,66 @@ const quiz_timer = () => {
 
 const question_timer = {
   question_time: sample_quiz.options.time_per_question,
-
   timer: new easytimer.Timer({countdown: true, startValues: {seconds: 0}}),
+
   get() {
     return this.timer;
   },
-  set() {
-    timer.start({startValues: {seconds: question_time}, target: {seconds: 0}});
-    $("[single-question-timer]").html(timer.getTimeValues().toString());
 
-    timer.addEventListener("secondsUpdated", function (e) {
-      $("[single-question-timer]").html(timer.getTimeValues().toString());
+  set() {
+    this.timer.start({startValues: {seconds: this.question_time}, target: {seconds: 0}});
+    $("[single-question-timer]").html(this.timer.getTimeValues().toString());
+
+    this.timer.addEventListener("secondsUpdated", function (e) {
+      $("[single-question-timer]").html(question_timer.timer.getTimeValues().toString());
     });
 
-    timer.addEventListener("targetAchieved", function (e) {
-      $("[single-question-timer]").html(0);
+    this.timer.addEventListener("targetAchieved", function (e) {
+      $("[single-question-timer]").html("00:00:00");
+      if (!(question_index.get() >= sample_quiz.questions.length - 1)) {
+        next_question();
+      } else {
+      }
     });
   },
-  stop(){
-  this.timer.stop()
+
+  stop() {
+    this.timer.stop();
+    this.timer.removeAllEventListeners();
+  },
+};
+
+const single_answer = {
+  quiz_info: {
+    quiz_id: sample_quiz.options.id,
+    name: sample_quiz.options.name,
+  },
+  answer: {
+    question_id: "",
+    selected_choice: "",
+  },
+};
+
+const post_answer = (choice_data, question_id) => {
+ 
+  $(`#${question_id} [undo_answer_btn]`).addClass("hidden");
+  $(`[data="undo_${choice_data}"]`).removeClass("hidden");
+  single_answer.answer.question_id = question_id;
+  single_answer.answer.selected_choice = choice_data;
+  // console.log(single_answer);
+};
+
+const undo_answer = (undo_btn, question_id) => {
+  $(undo_btn).addClass("hidden");
+  $(undo_btn).parent().find("input").prop("checked", false);
+};
+
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
+  return array;
 };
 
 $(() => {

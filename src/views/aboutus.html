@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>همگروه | آزمون آنلاین تک سوالی</title>
+    <title>همگروه | درباره ما</title>
 
     <!-- ------------------------------------ -->
 
@@ -19,9 +19,6 @@
     <!-- swiper style -->
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" />
 
-    <!-- radio css -->
-    <link rel="stylesheet" href="../assets/css/radio.css" />
-
     <!-- main style file -->
     <link rel="stylesheet" href="../assets/css/main.css" />
 
@@ -29,7 +26,7 @@
   </head>
 
   <body class="farhang text-16 text-navy overflow-x-hidden">
-    <div class="sticky top-0 z-50">
+    <div class="header sticky top-0 z-50">
       <!-- user bar -->
       <div class="bg-yellow p-5">
         <div class="xl:container mx-auto flex items-center justify-between">
@@ -39,6 +36,7 @@
             </a>
             <h2 class="text-24 max-sm:text-16 font-bold">به سامانه همگروه خوش آمدید!</h2>
           </div>
+
           <div class="flex items-center gap-3" dir="ltr" profile>
             <div
               class="flex items-center border-navy hover:border-red border-2 bg-white rounded-full relative"
@@ -117,7 +115,7 @@
                 </a>
               </li>
               <li class="">
-                <a href="./aboutus.html" class="">
+                <a href="./aboutus.html" class="active">
                   <span class="mdi mdi-information"></span>
                   <span class="">درباره ما</span>
                 </a>
@@ -132,92 +130,111 @@
       </div>
     </div>
     <div class="wrapper flex flex-col items-center mt-10 relative">
-      <!-- exam -->
-      <section class="flex max-sm:flex-col items-center w-full p-10 xl:container justify-between gap-3">
-        <!-- exam timeline -->
-        <div class="w-[90%] sm:w-[20%] relative overflow-hidden">
-          <span class="border-dashed border-[1px] absolute z-[-1] h-full right-[15px]"></span>
-          <ul class="flex flex-col gap-8">
-            <li>
-              <a href="" class="flex items-center gap-3">
-                <span class="bg-brown w-8 h-8 flex items-center justify-center rounded-full">1</span>
-                <span class="text-14">مدل آپلود فایل</span>
-              </a>
-            </li>
-            <li>
-              <a href="" class="flex items-center gap-3">
-                <span class="bg-brown w-8 h-8 flex items-center justify-center rounded-full">2</span>
-                <span class="">مدل ضبط ویدیو</span>
-              </a>
-            </li>
-            <li>
-              <a href="" class="flex items-center gap-3">
-                <span class="bg-brown w-8 h-8 flex items-center justify-center rounded-full">4</span>
-                <span class="text-14 font-bold">آزمون تستی</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <!-- exam view -->
-        <div class="w-full flex sm:items-center gap-3 justify-center">
-          <div class="h-full relative bg-[#F7F5EB] rounded-3xl rounded-bl-none sm:w-4/6 p-5">
-            <!-- exam header -->
-            <div exam-header>
-              <div class="flex items-center justify-between hidden" per-question>
-                <h1 class="text-14 font-bold">
-                  سوال
-                  <span current-question-number></span>
-                  از
-                  <span total-questions></span>
-                </h1>
-                <div class="flex flex-col items-center">
-                  <h1 class="text-14">
-                    زمان پاسخ دهی به سوال
-                    <span current-question-number></span>
-                  </h1>
-                  <span single-question-timer></span>
+      <section class="">
+        <div class="xl:container p-5 grid grid-cols-12 gap-3">
+          <!-- image -->
+          <div class="col-span-12 lg:col-span-3 flex items-center max-lg:justify-center">
+            <div class="w-[358px] aspect-[.7]">
+              <div class="w-full h-full mask-border">
+                <div class="w-full h-full" mask-url="url(../assets/images/mask641651353.png)">
+                  <img class="w-full h-full object-cover" src="../assets/images/561531313.jpg" alt="" />
                 </div>
               </div>
-              <div class="" all-questions-length>
-                <h1 class="text-14 font-bold">
-                  تعداد سوالات:
-                  <span total-questions></span>
-                </h1>
-              </div>
             </div>
-            <!-- exam quiz -->
-            <exam class="max-h-[250px] overflow-auto flex flex-col"></exam>
-            <exam-actions class="flex gap-3 justify-end">
-              <button class="py-2 px-3 bg-brown rounded-xl hidden">
-                <span class="mdi mdi-arrow-right"></span>
-                <span>سوال قبلی</span>
-              </button>
-              <button id="next_question_btn" onclick="next_question()" class="py-2 px-3 bg-brown rounded-xl hover:brightness-90 active:scale-95">
-                <span>سوال بعدی</span>
-                <span class="mdi mdi-arrow-left"></span>
-              </button>
-              <button id="submit_exam_btn" class="hidden py-2 px-3 bg-green rounded-xl hover:brightness-90 active:scale-95">
-                <span>پایان آزمون</span>
-                <span class="mdi mdi-arrow-left"></span>
-              </button>
-            </exam-actions>
           </div>
-          <div class="h-full">
-            <exam-progress
-              class="relative overflow-hidden flex flex-col items-center justify-between w-full h-[330px] rounded-3xl bg-yellow p-2 text-14 font-bold">
-              <div class="flex flex-col justify-between items-center relative">
-                <span>زمان کل</span>
-                <span class="absolute top-5" total-time>۰۲:۲۵:۳۴</span>
-              </div>
-              <span class="" dir="ltr">
-                <span time-percentage>100</span>
-                ٪
-              </span>
-              <span progress class="absolute bottom-0 bg-green w-full h-full z-10 mix-blend-multiply"></span>
-            </exam-progress>
+          <!-- about us content -->
+          <div class="col-span-12 lg:col-span-9 flex flex-col gap-3 justify-center items-start">
+            <h1 class="text-red text-32">درباره همگروه</h1>
+            <p class="">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون
+              و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در
+              شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
+              الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+              طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
+              متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد
+              تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد
+            </p>
           </div>
         </div>
       </section>
+      <section class="mt-10">
+        <!-- activites swiper -->
+        <div class="w-full xl:container bg-brown rounded-xl p-10">
+          <h1 class="text-red text-32 max-xl:text-center">برخی از فعالیت های همگروه</h1>
+          <div class="flex max-xl:flex-col items-center gap-3 w-full">
+            <!-- activities text swiper -->
+            <div class="swiper activity-text-swiper w-[280px] sm:w-1/2 xl:w-4/6  text-justify">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <p class="overflow-hidden h-[300px]">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
+                    ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای
+                    زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان
+                    رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+                    و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
+                    مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
+                    جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان
+                    فارسی ایجاد کرد لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه
+                    روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                    کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت
+                    بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد لورم ایپسوم متن ساختگی با تولید
+                    سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                    برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته،
+                    حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
+                    خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <p class="overflow-hidden h-[300px]">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
+                    ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای
+                    زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان
+                    رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+                    و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
+                    مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
+                    جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان
+                    فارسی ایجاد کرد لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه
+                    روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                    کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت
+                    بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد لورم ایپسوم متن ساختگی با تولید
+                    سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                    برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته،
+                    حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
+                    خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- activities image swiper -->
+            <div class="swiper activity-image-swiper w-[280px] sm:w-1/2 xl:w-2/6 " thumbsslider>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="rounded-xl overflow-hidden">
+                    <img class="w-full h-full object-cover" src="../assets/images/activity_sample.png" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="rounded-xl overflow-hidden">
+                    <img class="w-full h-full object-cover" src="../assets/images/activity_sample.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- swiper navigation -->
+          <div class="mt-5">
+            <div class="flex gap-2 items-center justify-center" news-nav>
+              <span
+                class="next-slide text-red border-red border-2 mdi mdi-chevron-right bg-white active:scale-95 rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"
+                swiper-right></span>
+              <span
+                class="prev-slide text-red border-red border-2 mdi mdi-chevron-left bg-white active:scale-95 rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"
+                swiper-left></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer class="relative w-full mt-32 bg-yellow p-5 text-center">
         <span class="absolute top-0 left-[calc(50%_-_88px)]">
           <div class="absolute top-3 left-8 flex gap-2 items-center z-20">
@@ -356,10 +373,26 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
     <script src="../assets/js/aos.js"></script>
-    <script src="../assets/js/easytimer.js"></script>
     <script src="../assets/js/main.js"></script>
 
-    <!-- test exam js -->
-    <script src="../assets/js/test_exam.js"></script>
+    <script>
+      const activity_image_swiper = new Swiper(".activity-image-swiper", {
+        slidesperView: 1,
+        autoplay: true,
+        watchSlidesProgress: true,
+        allowTouchMove:false,
+      });
+      const activity_text_swiper = new Swiper(".activity-text-swiper", {
+        slidesperView: 1,
+        autoplay: true,
+        navigation: {
+          nextEl: ".next-slide",
+          prevEl: ".prev-slide",
+        },
+        thumbs: {
+          swiper: activity_image_swiper,
+        },
+      });
+    </script>
   </body>
 </html>
