@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>همگروه | درباره ما</title>
+    <title>همگروه | تخفیف ها</title>
 
     <!-- ------------------------------------ -->
 
@@ -154,7 +154,7 @@
     <div class="wrapper flex flex-col items-center mt-10 relative">
         <section class="w-full xl:container p-4  flex gap-3 max-sm:flex-col items-center">
             <div class="w-full sm:w-5/6 relative">
-                <div class="w-5/6 mx-auto swiper discount-cats-swiper">
+                <div class="w-[80%] lg:w-[90%] mx-auto swiper discount-cats-swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <button class="">همه</button>
@@ -186,7 +186,8 @@
                 </div>
             </div>
             <div class="w-full sm:w-1/6">
-                <div class=" sm:mr-auto bg-brown p-5 rounded-xl w-full  flex justify-center gap-5 font-bold">
+                <div class=" sm:mr-auto bg-brown p-5 rounded-xl w-full 
+                 flex sm:max-lg:flex-col items-center justify-center gap-5 font-bold">
                     <span>امتیاز شما</span><span>48000</span>
                 </div>
             </div>
@@ -504,6 +505,9 @@
             },
             breakpoints: {
                 640: {
+                    slidesPerView: 3
+                },
+                1024:{
                     slidesPerView: 6
                 }
             },
