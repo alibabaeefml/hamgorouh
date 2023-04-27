@@ -9,7 +9,6 @@ $(function () {
     console.error(e);
   }
 
-  $('[href=""]').attr("href", "javascript:void(0)");
 
   // set masks
   $("[mask-url]").each((i, e) => {
