@@ -10,7 +10,37 @@
     <!-- ------------------------------------ -->
 
     <!-- styles -->
-
+    <script src="../assets/js/tailwind3.3.2.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brown: "#EAE0DA",
+              yellow: "#F7F5EB",
+              navy: "#12263A",
+              red: "#FF4A4A",
+              gray: "#A2A2A1",
+              green: "#38C972",
+            },
+            fontSize: {
+              32: [
+                "32px",
+                {
+                  fontWeight: "700",
+                },
+              ],
+              24: "24px",
+              20: "20px",
+              18: "18px",
+              16: "16px",
+              14: "14px",
+              12: "12px",
+            },
+          },
+        },
+      };
+    </script>
     <!-- animate on scroll -->
     <link rel="stylesheet" href="../assets/css/aos.css" />
 
@@ -23,16 +53,16 @@
     <!-- main style file -->
     <link rel="stylesheet" href="../assets/css/main.css" />
 
-    <link rel="stylesheet" href="../../dist/output.css" />
 </head>
 
 <body class="farhang text-16 text-navy overflow-x-hidden">
     <div class="header sticky top-0 z-50">
         <!-- user bar -->
+    <link rel="stylesheet" href="../../dist/output.css" />
         <div class="bg-yellow p-5">
             <div class="xl:container mx-auto flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <a href="./main.html"
+                    <a href="./index.html"
                         class="bg-red w-20 h-20 max-sm:w-10 max-sm:h-10 rounded-full flex items-center justify-center">
                         <img class="w-1/2 h-1/2 object-cover" src="../assets/images/Apple-Logo.png" alt="" />
                     </a>
@@ -98,7 +128,7 @@
                 <div class="max-sm:w-full">
                     <ul class="flex max-sm:flex-col gap-3 text-[16px] text-[#746F6C] fill-[#746F6C]">
                         <li class="relative">
-                            <a href="./main.html" class="">
+                            <a href="./index.html" class="">
                                 <span class="mdi mdi-home"></span>
                                 <span class="font-bold">صفحه اصلی</span>
                             </a>

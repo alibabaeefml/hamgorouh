@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>همگروه | اطلاع رسانی</title>
+    <title>همگروه | لیست مسابقات</title>
 
     <!-- ------------------------------------ -->
 
@@ -200,99 +200,7 @@
       </div>
     </div>
     <!-- Wrapper -->
-    <div
-      class="wrapper xl:container mx-auto grid grid-cols-12 mt-10 items-start"
-    >
-      <aside
-        data-aos="fade-left"
-        class="relative p-3 col-span-12 md:col-span-3 gap-y-6 flex flex-col text-right"
-      >
-        <h1 class="text-[24px] font-bold">دسته بندی اخبار</h1>
-        <div class="shadow-card_shadow rounded-md p-4 bg-yellow" search>
-          <div class="relative bg-brown rounded-xl">
-            <form action="">
-              <button
-                class="absolute left-0 m-2 rounded-md mdi mdi-magnify active:scale-[.8]"
-              ></button>
-              <input
-                class="duration-500 w-[86%] rounded-md p-2"
-                type="text"
-                name="search_term"
-                id="search_inp"
-                placeholder="جستجو"
-              />
-            </form>
-          </div>
-        </div>
-        <button
-          class="block sm:hidden bg-red text-white rounded-lg p-2"
-          onclick="$('#options').slideToggle()"
-        >
-          فیلتر ها
-        </button>
-        <div id="options" class="flex flex-col gap-y-3 max-sm:hidden">
-          <div class="shadow-card_shadow rounded-md p-4 bg-yellow" categories>
-            <div class="flex items-center justify-between text-16">
-              <h5 class="tracking-tight text-gray-00">دسته بندی نتایج</h5>
-              <span class="text-red mdi mdi-view-grid-outline"></span>
-            </div>
-            <hr class="my-2" />
-            <div class="">
-              <ul>
-                <li>
-                  <a href="" class="flex items-center active">
-                    <span
-                      class="opacity-0 mdi mdi-chevron-left text-red"
-                    ></span>
-                    <span>دسته بندی</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="" class="flex items-center">
-                    <span
-                      class="opacity-0 mdi mdi-chevron-left text-red"
-                    ></span>
-                    <span>دسته بندی</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="" class="flex items-center">
-                    <span
-                      class="opacity-0 mdi mdi-chevron-left text-red"
-                    ></span>
-                    <span>دسته بندی</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="shadow-card_shadow rounded-md p-4 bg-yellow" tabs>
-            <div class="">
-              <div tab-selection>
-                <ul
-                  class="flex items-center justify-between bg-brown/50 text-center font-bold rounded-xl overflow-hidden cursor-pointer select-none"
-                >
-                  <li
-                    class="bg-brown hover:bg-brown active:scale-90 p-2 w-full"
-                    onclick="set_filtered_news(most_visited)"
-                  >
-                    پربازدید ترین
-                  </li>
-                  <li
-                    class="hover:bg-brown active:scale-90 p-2 w-full"
-                    onclick="set_filtered_news(most_liked)"
-                  >
-                    محبوب ترین
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="mt-4" tabbed-news>
-              <ul class="flex flex-col gap-3" filtered-news></ul>
-            </div>
-          </div>
-        </div>
-      </aside>
+    <div class="wrapper xl:container mx-auto mt-10">
       <section
         data-aos="fade-right"
         class="flex flex-col items-center justify-between relative p-1 col-span-12 md:col-span-9 md:pr-6 mt-8 md:mt-0"
@@ -309,125 +217,24 @@
                 src="../assets/images/news_216531.png"
                 alt=""
               />
-              <a
-                href=""
-                class="absolute -bottom-3 text-14 text-red py-1 px-2 bg-yellow rounded-2xl"
-                center
-                >دسته بندی</a
-              >
             </div>
             <div class="mt-1 text-right h-1/2 flex flex-col justify-between">
-              <div class="flex justify-between mt-5">
-                <div class="flex items-center gap-2">
-                  <div class="flex items-center gap-2">
-                    <span class="mdi mdi-heart text-red"></span>
-                    <span class="text-12">20</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="mdi mdi-comment text-red"></span>
-                    <span class="text-12">بدون دیدگاه</span>
-                  </div>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="mdi mdi-calendar text-red"></span>
-                  <span class="text-12">8 اسفند 1401</span>
-                </div>
+              <div>
+                <h2 class="text-20 font-bold">عنوان مسابقه</h2>
+                <p class="ps-2 text-justify text-14" max-lines="3">توضیحات مسابقه</p>
               </div>
-              <p class="text-14 font-bold">
-                عوامل موثر برحوزه زیست فناوری در ایران
-              </p>
-              <p class="text-justify text-14" max-lines="3">
-                زیست‌فناوری از جمله واژه‌های پر سرو صدای سال‌های گذشته‌است. این
-                واژه را درست یا نادرست به مفهوم همه‌چیز برای مردم به‌کار
-                می‌برند. بیوتکنولوژی را در یک تعریف کلی به‌کارگیری ریزاندامگان
-                یا جانداران یا فرایندهای زیستی در صنایع تولیدی یا خدماتی
-                دانسته‌اند. تعریف ساده این پدیدهٔ نوین عبارت است از دانشی که
-                کاربرد یکپارچه علوم پایه‌ای مانند ژنتیک، زیست‌شیمی، زیست‌شناسی
-                سلولی، بافت‌شناسی، میکروب‌شناسی و فناوری‌های تولید را در
-                سامانه‌های زیستی به دلیل استفاده‌ای که در سرشت میان‌رشته‌ای علوم
-                دارد مطالعه می‌کنند. در تعریف دیگر زیست‌فناوری را چنین تشریح
-                کرده‌اند
-              </p>
-              <div class="flex items-center justify-between">
-                <div class="flex items-center aos-init aos-animate">
-                  <span class="w-8 h-8 rounded-full overflow-hidden">
-                    <img
-                      class="w-full h-full object-cover"
-                      src="../assets/images/contact_1.jpg"
-                      alt=""
-                    />
-                  </span>
-                  <span class="text-14 mr-2">علی بابائی</span>
-                </div>
-                <div>
-                  <a
-                    class="flex items-center px-2 rounded-lg duration-300 stroke-red text-red hover:text-white hover:stroke-white hover:bg-red"
-                    href="./singlenews.html"
-                  >
-                    <span class="text-14">ادامه مطلب</span>
-                    <span class="mr-1 mdi mdi-arrow-left"></span>
-                  </a>
-                </div>
+              <div class="flex items-center justify-end">
+                <a
+                  class="flex items-center px-2 rounded-lg duration-300 stroke-red text-red hover:text-white hover:stroke-white hover:bg-red"
+                  href="./singlenews.html"
+                >
+                  <span class="text-14">شرکت در مسابقه</span>
+                  <span class="mr-1 mdi mdi-arrow-left"></span>
+                </a>
               </div>
             </div>
           </li>
         </ul>
-        <!-- page-navigation -->
-        <!-- set active class for each page number <a> tag  -->
-        <!-- remove hidden class from next/prev <a> tag  -->
-        <div class="pagination mt-8">
-          <ul class="flex items-center gap-1">
-            <li>
-              <a
-                href=""
-                class="border-2 border-brown flex items-center justify-center rounded-md w-8 h-8"
-                ><span class="mdi mdi-chevron-right"></span
-              ></a>
-            </li>
-            <li>
-              <a
-                href=""
-                class="active border-2 border-brown flex items-center justify-center rounded-md w-8 h-8"
-                ><span class="">1</span></a
-              >
-            </li>
-            <li>
-              <a
-                href=""
-                class="border-2 border-brown flex items-center justify-center rounded-md w-8 h-8"
-                ><span class="">2</span></a
-              >
-            </li>
-            <li>
-              <a
-                href=""
-                class="border-2 border-brown flex items-center justify-center rounded-md w-8 h-8"
-                ><span class="">3</span></a
-              >
-            </li>
-            <li>
-              <a
-                href=""
-                class="border-2 border-brown flex items-center justify-center rounded-md w-8 h-8"
-                ><span class="mdi mdi-dots-horizontal"></span
-              ></a>
-            </li>
-            <li>
-              <a
-                href=""
-                class="border-2 border-brown flex items-center justify-center rounded-md w-8 h-8"
-                ><span class="">10</span></a
-              >
-            </li>
-            <li>
-              <a
-                href=""
-                class="border-2 border-brown flex items-center justify-center rounded-md w-8 h-8"
-                ><span class="mdi mdi-chevron-left"></span
-              ></a>
-            </li>
-          </ul>
-        </div>
       </section>
     </div>
 

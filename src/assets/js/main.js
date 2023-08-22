@@ -2,13 +2,14 @@ $(function () {
   // input focus
   $("input")
     .on("focus", (e) => $(e.target).parent().addClass("focus-target"))
-    .on("focusout", (e) => (!e.target.value ? $(e.target).parent().removeClass("focus-target") : null));
+    .on("focusout", (e) =>
+      !e.target.value ? $(e.target).parent().removeClass("focus-target") : null
+    );
   try {
-    AOS.init({disable: window.innerWidth < 768});
+    AOS.init({ disable: window.innerWidth < 768 });
   } catch (e) {
     console.error(e);
   }
-
 
   // set masks
   $("[mask-url]").each((i, e) => {
@@ -31,9 +32,9 @@ $(function () {
 
   // center absolute elements
   $("[center]").each((i, e) => {
-    
-    $(e).css('left', `calc(50% - ${$(e).outerWidth() / 2}px)` );
+    $(e).css("left", `calc(50% - ${$(e).outerWidth() / 2}px)`);
   });
+  
 });
 
 

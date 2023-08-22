@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>همگروه | صفحه اصلی</title>
+
+    <!-- ------------------------------------ -->
+
+    <!-- styles -->
+    <script src="../assets/js/tailwind3.3.2.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brown: "#EAE0DA",
+              yellow: "#F7F5EB",
+              navy: "#12263A",
+              red: "#FF4A4A",
+              gray: "#A2A2A1",
+              green: "#38C972",
+            },
+            fontSize: {
+              32: [
+                "32px",
+                {
+                  fontWeight: "700",
+                },
+              ],
+              24: "24px",
+              20: "20px",
+              18: "18px",
+              16: "16px",
+              14: "14px",
+              12: "12px",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- animate on scroll -->
+    <link rel="stylesheet" href="../assets/css/aos.css" />
+
+    <!-- icon resource -->
+    <link
+      rel="stylesheet"
+      href="../assets/icon/css/materialdesignicons.min.css"
+    />
+
+    <!-- swiper style -->
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" />
+
+    <!-- main style file -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+
+  <body class="farhang text-18 text-navy overflow-x-hidden">
+    <div class="sticky top-0 z-50">
+      <!-- user bar -->
+      <div class="bg-yellow p-5">
+        <div class="xl:container mx-auto flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <a
+              href="/"
+              class="w-14 h-14 max-sm:w-10 max-sm:h-10 rounded-full flex items-center justify-center"
+            >
+              <img
+                class="object-cover"
+                src="../assets/images/logo.png"
+                alt=""
+              />
+            </a>
+            <a href="/">
+              <h2 class="text-24 max-sm:text-16 font-bold">
+                زیست بوم مجازی هم‌گروه
+              </h2>
+            </a>
+          </div>
+
+          <div class="flex items-center gap-3" dir="ltr" profile="">
+            <div
+              class="flex items-center border-navy hover:border-red border-2 bg-white rounded-full relative"
+              onclick="$(this).find('[drop-down]').fadeIn();"
+              onfocusout="$(this).find('[drop-down]').fadeOut();"
+              tabindex="1"
+            >
+              <div class="w-10 h-10 rounded-full">
+                <img
+                  class="object-cover w-full h-full rounded-full"
+                  src="../assets/images/contact_1.jpg"
+                  alt=""
+                />
+              </div>
+              <div
+                class="absolute bg-white sm:rounded-b-xl rounded-md absolute top-10 z-20 left-0 w-max shadow-md hidden"
+                drop-down=""
+                dir="rtl"
+              >
+                <ul class="flex flex-col p-5 gap-3">
+                  <li class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-full">
+                      <img
+                        class="object-cover w-full h-full rounded-full"
+                        src="../assets/images/contact_1.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <span class="p-1">
+                      <span class="">علی بابائی</span>
+                    </span>
+                  </li>
+                  <hr />
+                  <li>
+                    <a
+                      onmousedown="window.location.assign('./my_competition')"
+                      class="flex justify-start gap-1 hover:text-red hover:fill-red"
+                    >
+                      <span class="mdi mdi-flag-outline"></span>
+                      <span>مسابقات من</span>
+                    </a>
+                  </li>
+                  <hr />
+                  <li>
+                    <a
+                      onmousedown="window.location.assign('./logout')"
+                      class="flex justify-start gap-1 hover:text-red hover:fill-red"
+                    >
+                      <span class="mdi mdi-logout"></span>
+                      <span>خروج از حساب</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button>
+              <span
+                class="mdi mdi-menu text-24 sm:hidden"
+                onclick="$('[nav]').toggleClass('max-sm:hidden');;$(this).toggleClass('mdi-menu mdi-close')"
+              ></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- nav bar -->
+      <div class="bg-brown pt-1 max-sm:hidden" nav>
+        <nav
+          class="xl:container max-sm:w-full mx-auto flex max-sm:items-center justify-between header"
+        >
+          <div class="max-sm:w-full">
+            <ul
+              class="flex max-sm:flex-col gap-3 text-[16px] text-[#746F6C] fill-[#746F6C]"
+            >
+              <li class="relative">
+                <a href="./index.html" class="active">
+                  <span class="font-bold">پیشخوان</span>
+                </a>
+              </li>
+              <li class="">
+                <a href="./news.html" class="">
+                  <span class="">اطلاع رسانی</span>
+                </a>
+              </li>
+              <li class="relative">
+                <a
+                  href="./competitions.html"
+                  class=""
+                  onclick="$(this).find('[drop-down]').toggle()"
+                >
+                  <span class="">مسابقات</span>
+                </a>
+              </li>
+              <li class="">
+                <a href="./aboutus.html" class="">
+                  <span class="">درباره ما</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div
+      class="wrapper flex flex-col items-center relative"
+      style="background-image: url(../assets/images/8651335.png)"
+    >
+      <!-- notification -->
+      <div
+        class="fixed top-56 z-30 xl:container duration-150"
+        id="notification_1"
+      >
+        <div class="relative bg-yellow p-5 rounded-lg shadow-md">
+          <span
+            class="absolute -top-6 right-0 bg-brown rounded-l-full p-1 px-3 font-bold"
+            >اطلاعیه شخصی</span
+          >
+          <div class="flex gap-3 flex-center">
+            <span class="mdi mdi-message-alert"></span>
+            <div class="justify-center">
+              <p max-lines="1">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+                در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+                کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان
+                جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را
+                برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در
+                زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و
+                دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و
+                زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
+                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+              </p>
+            </div>
+            <a href="" class="flex items-center gap-2 font-bold">
+              <span>مشاهده</span>
+              <span class="mdi mdi-arrow-left"></span>
+            </a>
+            <button
+              class="flex-center w-6 h-6 mdi mdi-close rounded-lg border-2 border-navy/25 flex"
+              onclick="$('#notification_1').fadeOut()"
+            ></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- events carousel -->
+      <section class="mt-8 w-full h-[440px] text-center">
+        <div class="xl:container mx-auto relative">
+          <div class="max-sm:hidden" carousel="">
+            <div class="carousel max-xl:justify-between p-10 text-center">
+              <div class="flex gap-10 items-center">
+                <div class="carousel-item max-lg:hidden relative" index="1">
+                  <div
+                    class="mask-border"
+                    style="
+                      -webkit-mask-box-image-source: url('../assets/images/mask56165156.png');
+                      -webkit-mask-box-image-slice: initial;
+                      -webkit-mask-box-image-width: initial;
+                      -webkit-mask-box-image-outset: initial;
+                      -webkit-mask-box-image-repeat: initial;
+                      display: block;
+                    "
+                  >
+                    <div
+                      class=""
+                      mask-url="url(../assets/images/mask56165156.png)"
+                      style="
+                        -webkit-mask-box-image: url(../assets/images/mask56165156.png);
+                        mask-image: url(../assets/images/mask56165156.png);
+                        -webkit-mask-box-image-width: 10px;
+                        mask-repeat: no-repeat;
+                      "
+                    >
+                      <a href="./singlematch/11">
+                        <img
+                          class="w-full h-full object-cover"
+                          src="../assets/images/74d5206b95b566662497e587bb7c25c7.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="absolute z-20 top-36 text-18">
+                    <h2 event-title="">جشنواره باران وحی</h2>
+                    <h2 event-year=""></h2>
+                  </div>
+                </div>
+                <div
+                  class="carousel-item larger max-sm:hidden relative"
+                  index="2"
+                >
+                  <div
+                    class="mask-border"
+                    style="
+                      -webkit-mask-box-image-source: url('../assets/images/mask56165156.png');
+                      -webkit-mask-box-image-slice: initial;
+                      -webkit-mask-box-image-width: initial;
+                      -webkit-mask-box-image-outset: initial;
+                      -webkit-mask-box-image-repeat: initial;
+                      display: block;
+                    "
+                  >
+                    <div
+                      class=""
+                      mask-url="url(../assets/images/mask56165156.png)"
+                      style="
+                        -webkit-mask-box-image: url(../assets/images/mask56165156.png);
+                        mask-image: url(../assets/images/mask56165156.png);
+                        -webkit-mask-box-image-width: 10px;
+                        mask-repeat: no-repeat;
+                      "
+                    >
+                      <a href="./singlematch/14">
+                        <img
+                          class="w-full h-full object-cover"
+                          src="../assets/images/74d5206b95b566662497e587bb7c25c7.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="absolute z-20 lg:top-48 text-20">
+                    <h2 event-title="">کتابخوانی فاطمی</h2>
+                    <h2 event-year=""></h2>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="carousel-item largest absolute z-20 right-[calc(50%_-_120px)]"
+                index="3"
+              >
+                <div
+                  class="mask-border"
+                  style="
+                    -webkit-mask-box-image-source: url('../assets/images/mask641651353.png');
+                    -webkit-mask-box-image-slice: initial;
+                    -webkit-mask-box-image-width: initial;
+                    -webkit-mask-box-image-outset: initial;
+                    -webkit-mask-box-image-repeat: initial;
+                    display: block;
+                  "
+                >
+                  <div
+                    class=""
+                    mask-url="url(../assets/images/mask641651353.png)"
+                    style="
+                      -webkit-mask-box-image: url(../assets/images/mask641651353.png);
+                      mask-image: url(../assets/images/mask641651353.png);
+                      -webkit-mask-box-image-width: 10px;
+                      mask-repeat: no-repeat;
+                    "
+                  >
+                    <a href="./singlematch/13">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="../assets/images/74d5206b95b566662497e587bb7c25c7.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="absolute z-20 top-50 text-24">
+                  <h2 event-title="">دل نوشته رضوی</h2>
+                  <h2 event-year=""></h2>
+                </div>
+              </div>
+              <div class="flex gap-10 items-center">
+                <div
+                  class="carousel-item larger relative max-sm:hidden"
+                  index="4"
+                >
+                  <div
+                    class="mask-border"
+                    style="
+                      -webkit-mask-box-image-source: url('../assets/images/mask53168465.png');
+                      -webkit-mask-box-image-slice: initial;
+                      -webkit-mask-box-image-width: initial;
+                      -webkit-mask-box-image-outset: initial;
+                      -webkit-mask-box-image-repeat: initial;
+                      display: block;
+                    "
+                  >
+                    <div
+                      class=""
+                      mask-url="url(../assets/images/mask53168465.png)"
+                      style="
+                        -webkit-mask-box-image: url(../assets/images/mask53168465.png);
+                        mask-image: url(../assets/images/mask53168465.png);
+                        -webkit-mask-box-image-width: 10px;
+                        mask-repeat: no-repeat;
+                      "
+                    >
+                      <a href="./singlematch/11">
+                        <img
+                          class="w-full h-full object-cover"
+                          src="../assets/images/74d5206b95b566662497e587bb7c25c7.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="absolute z-20 lg:top-48 text-20">
+                    <h2 event-title="">جشنواره باران وحی</h2>
+                    <h2 event-year=""></h2>
+                  </div>
+                </div>
+                <div class="carousel-item max-lg:hidden relative" index="5">
+                  <div
+                    class="mask-border"
+                    style="
+                      -webkit-mask-box-image-source: url('../assets/images/mask53168465.png');
+                      -webkit-mask-box-image-slice: initial;
+                      -webkit-mask-box-image-width: initial;
+                      -webkit-mask-box-image-outset: initial;
+                      -webkit-mask-box-image-repeat: initial;
+                      display: block;
+                    "
+                  >
+                    <div
+                      class=""
+                      mask-url="url(../assets/images/mask53168465.png)"
+                      style="
+                        -webkit-mask-box-image: url(../assets/images/mask53168465.png);
+                        mask-image: url(../assets/images/mask53168465.png);
+                        -webkit-mask-box-image-width: 10px;
+                        mask-repeat: no-repeat;
+                      "
+                    >
+                      <a href="./singlematch/14">
+                        <img
+                          class="w-full h-full object-cover"
+                          src="../assets/images/74d5206b95b566662497e587bb7c25c7.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="absolute z-20 top-36 text-18">
+                    <h2 event-title="">کتابخوانی فاطمی</h2>
+                    <h2 event-year=""></h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- carousel nav -->
+            <div class="carousel-nav text-2xl cursor-pointer">
+              <span
+                onclick="change_carousel(false)"
+                class="absolute z-20 max-sm:top-56 lg:top-1/2 right-10 mdi mdi-chevron-right hover:opacity-80 bg-brown w-10 h-10 flex items-center justify-center rounded-full active:scale-90"
+              ></span>
+              <span
+                onclick="change_carousel(true)"
+                class="absolute z-20 max-sm:top-56 lg:top-1/2 left-10 mdi mdi-chevron-left hover:opacity-80 bg-brown w-10 h-10 flex items-center justify-center rounded-full active:scale-90"
+              ></span>
+            </div>
+          </div>
+          <!-- carousel white mask -->
+          <div
+            class="xl:container absolute lg:top-16 xl:top-12 w-full z-10 max-lg:hidden"
+            style="filter: drop-shadow(0 -50px 27px rgba(0, 0, 0, 0.1))"
+            white-mask=""
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="../assets/images/carousel_mask5415313.png"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <!-- change to swiper in sm display -->
+        <div
+          class="w-full h-full sm:hidden events-swiper swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl swiper-backface-hidden"
+        >
+          <div
+            class="swiper-wrapper"
+            id="swiper-wrapper-0927bba10e28ae5b"
+            aria-live="polite"
+            style="
+              transition-duration: 0ms;
+              transform: translate3d(0px, 0px, 0px);
+            "
+          >
+            <div
+              class="swiper-slide swiper-slide-active"
+              role="group"
+              aria-label="1 / 3"
+              style="width: 375px"
+            >
+              <div
+                class="carousel-item largest absolute z-20 right-[calc(50%_-_120px)]"
+                index="3"
+              >
+                <div
+                  class="mask-border"
+                  style="
+                    -webkit-mask-box-image-source: url('../assets/images/mask641651353.png');
+                    -webkit-mask-box-image-slice: initial;
+                    -webkit-mask-box-image-width: initial;
+                    -webkit-mask-box-image-outset: initial;
+                    -webkit-mask-box-image-repeat: initial;
+                    display: block;
+                  "
+                >
+                  <div
+                    class=""
+                    mask-url="url(../assets/images/mask641651353.png)"
+                    style="
+                      -webkit-mask-box-image: url(../assets/images/mask641651353.png);
+                      mask-image: url(../assets/images/mask641651353.png);
+                      -webkit-mask-box-image-width: 10px;
+                      mask-repeat: no-repeat;
+                    "
+                  >
+                    <a href="./singlematch/13">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="../assets/images/74d5206b95b566662497e587bb7c25c7.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="absolute z-20 top-50 text-24">
+                  <h2>کتابخوانی فاطمی</h2>
+                  <h2></h2>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide swiper-slide-next"
+              role="group"
+              aria-label="2 / 3"
+              style="width: 375px"
+            >
+              <div
+                class="carousel-item largest absolute z-20 right-[calc(50%_-_120px)]"
+                index="3"
+              >
+                <div
+                  class="mask-border"
+                  style="
+                    -webkit-mask-box-image-source: url('../assets/images/mask641651353.png');
+                    -webkit-mask-box-image-slice: initial;
+                    -webkit-mask-box-image-width: initial;
+                    -webkit-mask-box-image-outset: initial;
+                    -webkit-mask-box-image-repeat: initial;
+                    display: block;
+                  "
+                >
+                  <div
+                    class=""
+                    mask-url="url(../assets/images/mask641651353.png)"
+                    style="
+                      -webkit-mask-box-image: url(../assets/images/mask641651353.png);
+                      mask-image: url(../assets/images/mask641651353.png);
+                      -webkit-mask-box-image-width: 10px;
+                      mask-repeat: no-repeat;
+                    "
+                  >
+                    <a href="./singlematch/13">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="../assets/images/74d5206b95b566662497e587bb7c25c7.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="absolute z-20 top-50 text-24">
+                  <h2>دل نوشته رضوی</h2>
+                  <h2></h2>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="swiper-slide"
+              role="group"
+              aria-label="3 / 3"
+              style="width: 375px"
+            >
+              <div
+                class="carousel-item largest absolute z-20 right-[calc(50%_-_120px)]"
+                index="3"
+              >
+                <div
+                  class="mask-border"
+                  style="
+                    -webkit-mask-box-image-source: url('../assets/images/mask641651353.png');
+                    -webkit-mask-box-image-slice: initial;
+                    -webkit-mask-box-image-width: initial;
+                    -webkit-mask-box-image-outset: initial;
+                    -webkit-mask-box-image-repeat: initial;
+                    display: block;
+                  "
+                >
+                  <div
+                    class=""
+                    mask-url="url(../assets/images/mask641651353.png)"
+                    style="
+                      -webkit-mask-box-image: url(../assets/images/mask641651353.png);
+                      mask-image: url(../assets/images/mask641651353.png);
+                      -webkit-mask-box-image-width: 10px;
+                      mask-repeat: no-repeat;
+                    "
+                  >
+                    <a href="./singlematch/13">
+                      <img
+                        class="w-full h-full object-cover"
+                        src="../assets/images/74d5206b95b566662497e587bb7c25c7.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="absolute z-20 top-50 text-24">
+                  <h2>جشنواره باران وحی</h2>
+                  <h2></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span
+            class="swiper-notification"
+            aria-live="assertive"
+            aria-atomic="true"
+          ></span>
+        </div>
+      </section>
+
+      <!-- recent news -->
+      <section class=" mt-10">
+        <div class="mt-20">
+          <!-- news swiper -->
+          <div
+            class="news-swiper-container relative bg-yellow xl:container h-max sm:h-[290px] p-5 rounded-lg shadow-md flex max-sm:flex-col"
+          >
+            <!-- swiper title -->
+            <div class="sm:w-1/3">
+              <span
+                class="absolute -top-6 text-20 right-0 bg-brown rounded-l-full p-2 px-5 font-bold"
+                >اطلاع رسانی</span
+              >
+
+              <!-- swiper navigation -->
+              <div
+                class="absolute sm:-top-3 max-sm:bottom-5 max-sm:left-[43%] flex gap-2 items-center"
+                news-nav
+              >
+                <span
+                  class="text-red border-red border-2 mdi mdi-chevron-right bg-white active:scale-95 rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"
+                  swiper-right
+                ></span>
+                <span
+                  class="text-red border-red border-2 mdi mdi-chevron-left bg-white active:scale-95 rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"
+                  swiper-left
+                ></span>
+              </div>
+              <div class="p-5">
+                <p  max-lines="8">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+                  استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+                  در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                  نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+                  کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان
+                  جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را
+                  برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در
+                  زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و
+                  دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و
+                  زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
+                  پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                </p>
+              </div>
+             
+            </div>
+            <!-- swiper -->
+            <div class="sm:absolute sm:-top-20 left-0 mb-10">
+              <div class="swiper max-sm:w-[300px] h-auto news-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide p-5">
+                    <div
+                      class="news-card relative w-full h-[330px] duration-300 p-3 rounded-lg shadow-lg hover:scale-[1.01] bg-white"
+                    >
+                      <div class="rounded-xl h-1/2 relative">
+                        <img
+                          class="rounded-xl object-cover w-full h-full"
+                          src="../assets/images/quran003_0.png"
+                          alt=""
+                        />
+                        <div
+                          class="w-full flex justify-center absolute -bottom-2"
+                        >
+                          <a
+                            class="bg-white text-red text-18 py-1 px-2 rounded-md"
+                            >جشنواره باران وحی</a
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="news-card mt-5 text-right h-1/2 flex flex-col justify-between"
+                      >
+                        <p class="font-bold text-18">
+                          فیلم آموزش ورود و ثبت نام در باران وحی
+                        </p>
+                        <p class="text-justify h-11 overflow-hidden">
+                          این فیلم آموزشی، نحوه ورود و ثبت نام در جشنواره باران
+                          ...
+                        </p>
+
+                        <div class="flex mb-3">
+                          <a
+                            class="w-full flex items-center justify-between p-1 rounded-lg duration-300 text-red hover:text-white hover:bg-red"
+                            href="./singlenews/7"
+                          >
+                            <span class="text-14">ادامه مطلب...</span>
+                            <span class="mdi mdi-arrow-left"></span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide p-5">
+                    <div
+                      class="news-card relative w-full h-[330px] duration-300 p-3 rounded-lg shadow-lg hover:scale-[1.01] bg-white"
+                    >
+                      <div class="rounded-xl h-1/2 relative">
+                        <img
+                          class="rounded-xl object-cover w-full h-full"
+                          src="../assets/images/quran003_0.png"
+                          alt=""
+                        />
+                        <div
+                          class="w-full flex justify-center absolute -bottom-2"
+                        >
+                          <a
+                            class="bg-white text-red text-18 py-1 px-2 rounded-md"
+                            >جشنواره باران وحی</a
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="news-card mt-5 text-right h-1/2 flex flex-col justify-between"
+                      >
+                        <p class="font-bold text-18">
+                          فیلم آموزش ورود و ثبت نام در باران وحی
+                        </p>
+                        <p class="text-justify h-11 overflow-hidden">
+                          این فیلم آموزشی، نحوه ورود و ثبت نام در جشنواره باران
+                          ...
+                        </p>
+
+                        <div class="flex mb-3">
+                          <a
+                            class="w-full flex items-center justify-between p-1 rounded-lg duration-300 text-red hover:text-white hover:bg-red"
+                            href="./singlenews/7"
+                          >
+                            <span class="text-14">ادامه مطلب...</span>
+                            <span class="mdi mdi-arrow-left"></span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide p-5">
+                    <div
+                      class="news-card relative w-full h-[330px] duration-300 p-3 rounded-lg shadow-lg hover:scale-[1.01] bg-white"
+                    >
+                      <div class="rounded-xl h-1/2 relative">
+                        <img
+                          class="rounded-xl object-cover w-full h-full"
+                          src="../assets/images/quran003_0.png"
+                          alt=""
+                        />
+                        <div
+                          class="w-full flex justify-center absolute -bottom-2"
+                        >
+                          <a
+                            class="bg-white text-red text-18 py-1 px-2 rounded-md"
+                            >جشنواره باران وحی</a
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="news-card mt-5 text-right h-1/2 flex flex-col justify-between"
+                      >
+                        <p class="font-bold text-18">
+                          فیلم آموزش ورود و ثبت نام در باران وحی
+                        </p>
+                        <p class="text-justify h-11 overflow-hidden">
+                          این فیلم آموزشی، نحوه ورود و ثبت نام در جشنواره باران
+                          ...
+                        </p>
+
+                        <div class="flex mb-3">
+                          <a
+                            class="w-full flex items-center justify-between p-1 rounded-lg duration-300 text-red hover:text-white hover:bg-red"
+                            href="./singlenews/7"
+                          >
+                            <span class="text-14">ادامه مطلب...</span>
+                            <span class="mdi mdi-arrow-left"></span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="relative w-full mt-32 bg-yellow p-5 text-center">
+        <span class="absolute top-0 left-[calc(50%_-_88px)]">
+          <div class="absolute top-3 left-8 flex gap-2 items-center z-20">
+            <div
+              class="bg-red w-7 h-7 rounded-full flex items-center justify-center"
+            >
+              <img
+                class="object-contain w-full h-full"
+                src="../assets/images/Apple-Logo.png"
+                alt=""
+              />
+            </div>
+            <span>وبسایت همگروه</span>
+          </div>
+          <img
+            class="w-full h-full object-cover rotate-180"
+            src="../assets/images/nav-item-mask.svg"
+            alt=""
+          />
+        </span>
+        <div class="mt-11 grid grid-cols-12 gap-5 xl:container mx-auto">
+          <!-- link -->
+          <div class="col-span-6 sm:col-span-2">
+            <h2 class="text-18 font-bold">لینک های دسترسی</h2>
+            <ul>
+              <li><a href="">لورم ایپسوم</a></li>
+              <li><a href="">لورم ایپسوم</a></li>
+              <li><a href="">لورم ایپسوم</a></li>
+            </ul>
+          </div>
+          <!-- link -->
+          <div class="col-span-6 sm:col-span-2">
+            <h2 class="text-18 font-bold">لینک های دسترسی</h2>
+            <ul>
+              <li><a href="">لورم ایپسوم</a></li>
+              <li><a href="">لورم ایپسوم</a></li>
+              <li><a href="">لورم ایپسوم</a></li>
+            </ul>
+          </div>
+          <!-- about text -->
+          <div class="col-span-12 sm:col-span-8 lg:col-span-4">
+            <h1 class="text-18 font-bold">درباره همگروه</h1>
+            <p class="h-24 overflow-auto">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+              نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+              کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان
+              جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای
+              طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان
+              فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری
+              موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد
+              نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل
+              دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+            </p>
+          </div>
+          <!-- premium categories -->
+          <div class="col-span-12 sm:col-span-6 lg:col-span-2">
+            <h2 class="text-18 font-bold">دسته های برتر</h2>
+            <ul>
+              <li><a href="">لورم ایپسوم</a></li>
+              <li><a href="">لورم ایپسوم</a></li>
+              <li><a href="">لورم ایپسوم</a></li>
+            </ul>
+          </div>
+          <!-- licenses -->
+          <div
+            class="col-span-12 lg:col-span-2 sm:col-span-6 flex flex-col items-center"
+          >
+            <h2 class="text-18 font-bold">مجوز های سایت</h2>
+            <div class="flex gap-3 items-center">
+              <div class="w-[80px] h-[80px]">
+                <a href="">
+                  <img
+                    class="w-full h-full object-cover rounded-lg"
+                    src="../assets/images/561531313.jpg"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="w-[80px] h-[80px]">
+                <a href="">
+                  <img
+                    class="w-full h-full object-cover rounded-lg"
+                    src="../assets/images/561531313.jpg"
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- contact -->
+        <div
+          class="xl:container mx-auto p-5 my-5 bg-brown flex gap-3 max-sm:flex-col items-center justify-between rounded-xl"
+        >
+          <div>
+            <p>راه های ارتباطی با وبسایت همگروه</p>
+          </div>
+          <div>
+            <ul class="flex gap-3 max-sm:flex-col max-sm:items-center">
+              <li class="">
+                <a href="" class="flex gap-2">
+                  <span
+                    class="mdi mdi-phone-outline bg-white rounded-lg w-6 h-6 flex items-center justify-center text-red"
+                  ></span>
+                  <span>۰۹۱۲۳۴۵۰۰۰۰</span>
+                </a>
+              </li>
+              <li class="">
+                <a href="" class="flex gap-2">
+                  <span
+                    class="mdi mdi-email-outline bg-white rounded-lg w-6 h-6 flex items-center justify-center text-red"
+                  ></span>
+                  <span>info@yoursite.com</span>
+                </a>
+              </li>
+              <li class="">
+                <a href="" class="flex gap-2">
+                  <span
+                    class="mdi mdi-map-marker-outline bg-white rounded-lg w-6 h-6 flex items-center justify-center text-red"
+                  ></span>
+                  <span>قم، بلوار صدوقی، صدوقی ۵۵</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="xl:container mx-auto flex max-sm:flex-col items-center justify-between"
+        >
+          <p>
+            تمام حقوق این سایت برای وبسایت همگروه محفوظ بوده و هرگونه کپی برداری
+            پیگیری قانونی خواهد شد.
+          </p>
+          <ul class="text-24 flex items-center gap-2">
+            <li>
+              <a
+                href=""
+                class="bg-brown w-8 h-8 rounded-md flex items-center justify-center"
+              >
+                <span>
+                  <svg
+                    id="Iconly_Light-outline_Send"
+                    data-name="Iconly/Light-outline/Send"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16.991"
+                    height="16.991"
+                    viewBox="0 0 16.991 16.991"
+                  >
+                    <g id="Send" transform="translate(0)">
+                      <path
+                        id="Send-2"
+                        data-name="Send"
+                        d="M11.261,16.991A1.638,1.638,0,0,1,9.913,16.3l-.077-.116L6.442,10.557.8,7.085a1.684,1.684,0,0,1,.278-3l.132-.043L14.851.068A1.7,1.7,0,0,1,15.323,0a1.681,1.681,0,0,1,1.628,2.041l-.031.122L12.872,15.791A1.67,1.67,0,0,1,11.261,16.991Zm.594-12.528a.647.647,0,0,1,.387.127l.074.063a.658.658,0,0,1,.066.851l-.063.074L7.742,10.183l3.214,5.322a.358.358,0,0,0,.312.179.363.363,0,0,0,.326-.2l.027-.067L15.666,1.791a.373.373,0,0,0-.058-.333.368.368,0,0,0-.293-.15l-.038,0-.064.013L1.574,5.292a.365.365,0,0,0-.256.272.376.376,0,0,0,.109.364l.057.043L6.821,9.255l4.57-4.6A.651.651,0,0,1,11.855,4.463Z"
+                        transform="translate(0)"
+                        fill="rgba(0,0,0,0.8)"
+                      />
+                    </g>
+                  </svg>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href=""
+                class="mdi mdi-youtube bg-brown w-8 h-8 rounded-md flex items-center justify-center"
+              ></a>
+            </li>
+            <li>
+              <a
+                href=""
+                class="mdi mdi-whatsapp bg-brown w-8 h-8 rounded-md flex items-center justify-center"
+              ></a>
+            </li>
+            <li>
+              <a
+                href=""
+                class="mdi mdi-instagram bg-brown w-8 h-8 rounded-md flex items-center justify-center"
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Js -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/js/aos.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <!-- events carousel -->
+    <script>
+      // to fetch from database
+      const events = [
+        {
+          img: "../assets/images/74d5206b95b566662497e587bb7c25c7.png",
+          text: "مسابقه نهج البلاغه",
+          year: "1401",
+          carousel_index: 1,
+        },
+        {
+          img: "../assets/images/74d5206b95b566662497e587bb7c25c7.png",
+          text: "مسابقه داستان قرآنی",
+          year: "1401",
+          link: "./singlematch.html",
+          carousel_index: 2,
+        },
+        {
+          img: "../assets/images/74d5206b95b566662497e587bb7c25c7.png",
+          text: "مسابقه حفظ قرآن",
+          year: "1401",
+          carousel_index: 3,
+        },
+        {
+          img: "../assets/images/74d5206b95b566662497e587bb7c25c7.png",
+          text: "مسابقه حفظ احادیث",
+          year: "1401",
+          carousel_index: 4,
+        },
+        {
+          img: "../assets/images/74d5206b95b566662497e587bb7c25c7.png",
+          text: "مسابقه تفسیر",
+          year: "1401",
+          carousel_index: 5,
+        },
+        {
+          img: "../assets/images/74d5206b95b566662497e587bb7c25c7.png",
+          text: "مسابقه ترتیل",
+          year: "1401",
+          carousel_index: 6,
+        },
+      ];
+
+      const set_carousel_data = () => {
+        $(".mask-border").finish();
+        $(".mask-border").fadeOut();
+        $(".mask-border").fadeIn();
+
+        // set carousel view based on events data array
+        $("[index]").each((i, e) => {
+          $(events).each((i, event) => {
+            if (Number($(e).attr("index")) == event.carousel_index) {
+              const { img, text, year, link } = event;
+              setTimeout(() => {
+                $(e).find("img").attr("src", img);
+                $(e).find("[event-title]").text(text);
+                $(e).find("a").attr("href", link);
+              }, 200);
+            }
+          });
+        });
+      };
+
+      const change_carousel = (increment) => {
+        $(events).each((i, event) => {
+          // set maximum index based on length of data items of events array
+          let max = events.length;
+
+          if (increment && event.carousel_index < max) {
+            // move to left
+            increment ? event.carousel_index++ : null;
+          } else if (!increment && event.carousel_index > 1) {
+            event.carousel_index--;
+          } else if (event.carousel_index == max) {
+            event.carousel_index = 1;
+          } else if (event.carousel_index == 1) {
+            event.carousel_index = max;
+          }
+        });
+
+        set_carousel_data();
+      };
+
+      // ==============================
+      const event_swiper = new Swiper(".events-swiper", {
+        slidesPerView: 1,
+        autoplay: false,
+      });
+    </script>
+    <!-- news swiper -->
+    <script>
+      const news_swiper = new Swiper(".news-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+          nextEl: "[swiper-left]",
+          prevEl: "[swiper-right]",
+        },
+        breakpoints: {
+          1200: {
+            slidesPerView: 3,
+          },
+          800: {
+            slidesPerView: 2,
+          },
+        },
+      });
+    </script>
+    <!-- on dom ready -->
+    <script>
+      const swiper_width = () => {
+        $(".news-swiper").width(
+          $(".news-swiper-container").width() -
+            $(".news-swiper-container").width() * 0.3
+        );
+        $("[news-nav]").css("left", $(".news-swiper").width());
+      };
+      $(function () {
+        set_carousel_data();
+        if (innerWidth > 640) swiper_width();
+      });
+
+      $(window).resize((e) => {
+        if (innerWidth > 640) {
+          swiper_width();
+        } else {
+          $(".news-swiper, [news-nav]").attr("style", "");
+        }
+      });
+    </script>
+  </body>
+</html>

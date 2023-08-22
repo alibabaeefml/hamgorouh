@@ -4,37 +4,77 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>همگروه | مسابقات</title>
+    <title>همگروه | تک مسابقه</title>
 
     <!-- ------------------------------------ -->
 
     <!-- styles -->
-
+    <script src="../assets/js/tailwind3.3.2.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brown: "#EAE0DA",
+              yellow: "#F7F5EB",
+              navy: "#12263A",
+              red: "#FF4A4A",
+              gray: "#A2A2A1",
+              green: "#38C972",
+            },
+            fontSize: {
+              32: [
+                "32px",
+                {
+                  fontWeight: "700",
+                },
+              ],
+              24: "24px",
+              20: "20px",
+              18: "18px",
+              16: "16px",
+              14: "14px",
+              12: "12px",
+            },
+          },
+        },
+      };
+    </script>
     <!-- animate on scroll -->
     <link rel="stylesheet" href="../assets/css/aos.css" />
 
     <!-- icon resource -->
-    <link rel="stylesheet" href="../assets/icon/css/materialdesignicons.min.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/icon/css/materialdesignicons.min.css"
+    />
 
     <!-- swiper style -->
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" />
 
     <!-- main style file -->
     <link rel="stylesheet" href="../assets/css/main.css" />
-
-  <link rel="stylesheet" href="../../dist/output.css" >
   </head>
 
   <body class="farhang text-16 text-navy overflow-x-hidden">
-    <div class="sticky top-0 z-50" >
+    <div class="sticky top-0 z-50">
       <!-- user bar -->
       <div class="bg-yellow p-5">
         <div class="xl:container mx-auto flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <a href="./main.html" class="bg-red w-20 h-20 max-sm:w-10 max-sm:h-10 rounded-full flex items-center justify-center">
-              <img class="w-1/2 h-1/2 object-cover" src="../assets/images/Apple-Logo.png" alt="" />
+            <a
+              href="./index.html"
+              class="bg-red w-20 h-20 max-sm:w-10 max-sm:h-10 rounded-full flex items-center justify-center"
+            >
+              <img
+                class="w-1/2 h-1/2 object-cover"
+                src="../assets/images/Apple-Logo.png"
+                alt=""
+              />
             </a>
-            <h2 class="text-24 max-sm:text-16 font-bold">به سامانه همگروه خوش آمدید!</h2>
+            <h2 class="text-24 max-sm:text-16 font-bold">
+              به سامانه همگروه خوش آمدید!
+            </h2>
           </div>
 
           <div class="flex items-center gap-3" dir="ltr" profile>
@@ -45,24 +85,39 @@
             "
               tabindex="1"
               onfocusout="$(this).addClass('rounded-full');$(this).removeClass('border-none rounded-t-xl');
-            $(this).find('[drop-down]').hide();$('[user-actions]').addClass('max-sm:hidden')">
+            $(this).find('[drop-down]').hide();$('[user-actions]').addClass('max-sm:hidden')"
+            >
               <div class="w-10 h-10 rounded-full">
-                <img class="object-cover w-full h-full rounded-full" src="../assets/images/contact_1.jpg" alt="" />
+                <img
+                  class="object-cover w-full h-full rounded-full"
+                  src="../assets/images/contact_1.jpg"
+                  alt=""
+                />
               </div>
               <span class="p-1 cursor-pointer max-sm:hidden">
                 <span class="">علی بابائی</span>
                 <span class="mdi mdi-chevron-down"></span>
               </span>
-              <div class="bg-white sm:rounded-b-xl rounded-md absolute top-10 left-0 sm:w-full w-40 shadow-md hidden" drop-down dir="rtl">
+              <div
+                class="bg-white sm:rounded-b-xl rounded-md absolute top-10 left-0 sm:w-full w-40 shadow-md hidden"
+                drop-down
+                dir="rtl"
+              >
                 <ul class="flex flex-col p-1 gap-y-1">
                   <li>
-                    <a class="flex justify-start gap-1 hover:text-red hover:fill-red" href="">
+                    <a
+                      class="flex justify-start gap-1 hover:text-red hover:fill-red"
+                      href=""
+                    >
                       <span class="mdi mdi-account-outline"></span>
                       <span>پنل کاربر</span>
                     </a>
                   </li>
                   <li>
-                    <a onmousedown="window.location.assign('./login.html')" class="flex justify-start gap-1 hover:text-red hover:fill-red">
+                    <a
+                      onmousedown="window.location.assign('./login.html')"
+                      class="flex justify-start gap-1 hover:text-red hover:fill-red"
+                    >
                       <span class="mdi mdi-logout"></span>
                       <span>خروج از حساب</span>
                     </a>
@@ -71,18 +126,30 @@
               </div>
             </div>
             <button>
-              <span class="mdi mdi-menu text-24 sm:hidden" onclick="$('[nav]').toggleClass('max-sm:hidden');$(this).toggleClass('mdi-menu mdi-close')"></span>
+              <span
+                class="mdi mdi-menu text-24 sm:hidden"
+                onclick="$('[nav]').toggleClass('max-sm:hidden');$(this).toggleClass('mdi-menu mdi-close')"
+              ></span>
             </button>
             <div class="">
-              <ul class="flex gap-3 items-center text-[24px] max-sm:hidden" user-actions>
+              <ul
+                class="flex gap-3 items-center text-[24px] max-sm:hidden"
+                user-actions
+              >
                 <li>
-                  <a href="" class="relative badge"><span class="mdi mdi-bell-outline"></span></a>
+                  <a href="" class="relative badge"
+                    ><span class="mdi mdi-bell-outline"></span
+                  ></a>
                 </li>
                 <li>
-                  <a href="" class="relative"><span class="mdi mdi-email-outline"></span></a>
+                  <a href="" class="relative"
+                    ><span class="mdi mdi-email-outline"></span
+                  ></a>
                 </li>
                 <li>
-                  <a href="" class="relative"><span class="mdi mdi-magnify"></span></a>
+                  <a href="" class="relative"
+                    ><span class="mdi mdi-magnify"></span
+                  ></a>
                 </li>
               </ul>
             </div>
@@ -91,11 +158,15 @@
       </div>
       <!-- nav bar -->
       <div class="bg-brown sm:p-7 sm:pb-0 max-sm:hidden" nav>
-        <nav class="xl:container max-sm:w-full mx-auto flex max-sm:items-center justify-between">
+        <nav
+          class="xl:container max-sm:w-full mx-auto flex max-sm:items-center justify-between"
+        >
           <div class="max-sm:w-full">
-            <ul class="flex max-sm:flex-col gap-3 text-[16px] text-[#746F6C] fill-[#746F6C]">
+            <ul
+              class="flex max-sm:flex-col gap-3 text-[16px] text-[#746F6C] fill-[#746F6C]"
+            >
               <li class="relative">
-                <a href="./main.html" class="">
+                <a href="./index.html" class="">
                   <span class="mdi mdi-home"></span>
                   <span class="font-bold">صفحه اصلی</span>
                 </a>
@@ -129,13 +200,19 @@
     </div>
     <div class="wrapper flex flex-col items-center mt-10 relative">
       <section class="mt-10">
-        <div class="xl:container p-5 grid  lg:grid-cols-3 gap-3">
+        <div class="xl:container p-5 grid lg:grid-cols-3 gap-3">
           <!-- image -->
-          <div class="flex items-center max-lg:justify-center">
+          <div class="flex items-center justify-center">
             <div class="w-[258px] h-[384px]">
               <div class="w-full h-full mask-border">
-                <div class="w-full h-full" mask-url="url(../assets/images/mask641651353.png)">
-                  <img class="w-full h-full object-cover" src="../assets/images/561531313.jpg" alt="" />
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    src="../assets/images/561531313.jpg"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -144,15 +221,26 @@
           <div class="flex flex-col gap-3 justify-center items-center">
             <h1 class="text-32">اطلاعیه کلی مسابقه داستان قرآنی</h1>
             <p class="overflow-auto h-[210px]">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون
-              و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در
-              شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
-              الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
-              طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
-              متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد
-              تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+              نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+              کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
+              جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای
+              طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان
+              فارسی ایجاد کرد لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+              صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه
+              روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+              تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
+              می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت
+              فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری
+              را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در
+              زبان فارسی ایجاد کرد
             </p>
-            <a href="./registermatch.html" class="active:scale-90 hover:brightness-90 py-2 px-3 rounded-lg flex items-center justify-center bg-brown hover:bg-red/40">
+            <a
+              href="./registermatch.html"
+              class="active:scale-90 hover:brightness-90 py-2 px-3 rounded-lg flex items-center justify-center bg-brown hover:bg-red/40"
+            >
               <span class="text-18">ثبت نام در مسابقه</span>
               <span class="mdi mdi-arrow-left"></span>
             </a>
@@ -160,82 +248,160 @@
           <!-- match rules -->
 
           <div
-            class="lg:mr-auto max-lg:mx-auto max-lg:mt-32 w-[350px] h-[360px]
-            p-5 sm:rounded-xl lg:rounded-tl-[70px] lg:rounded-bl-none bg-yellow relative">
-            <span class="p-3 pr-5 bg-brown absolute -top-6 right-0 rounded-full rounded-br-none">قوانین شرکت در مسابقه</span>
+            class="lg:mr-auto max-lg:mx-auto max-lg:mt-32 w-[350px] h-[360px] p-5 sm:rounded-xl lg:rounded-tl-[70px] lg:rounded-bl-none bg-yellow relative"
+          >
+            <span
+              class="p-3 pr-5 bg-brown absolute -top-6 right-0 rounded-full rounded-br-none"
+              >قوانین شرکت در مسابقه</span
+            >
             <!-- rules list swiper -->
             <div class="">
-              <div class="rules-swiper swiper ">
+              <div class="rules-swiper swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <ul class="p-3 flex flex-col items-center justify-center">
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                     </ul>
                   </div>
                   <div class="swiper-slide">
                     <ul class="p-3 flex flex-col items-center justify-center">
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                     </ul>
                   </div>
                   <div class="swiper-slide">
                     <ul class="p-3 flex flex-col items-center justify-center">
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                       <li class="flex gap-3 items-center justify-between">
-                        <span class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center">1</span>
-                        <p class="w-[90%]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
                       </li>
                     </ul>
                   </div>
@@ -248,54 +414,51 @@
       </section>
       <!-- details -->
       <section class="mt-16 text-center">
-        <div class="xl:container">
-          <h1 class="text-32">اطلاعات مسابقه</h1>
-          <p class="w-1/2 mx-auto h-14">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
-            سطرآنچنان که لازم است قرار گیرد.
-          </p>
-        </div>
-        <div class="mt-16 grid sm:grid-cols-4 gap-3">
+        <div class="mt-16 grid sm:grid-cols-2 gap-3">
+
           <div class="relative flex justify-center">
-            <div class="flex flex-col items-center absolute top-[calc(50%_-_21px)] right-[calc(50%_-_28px)]">
-              <span class="font-bold">زمان مسابقه</span>
+            <div
+              class="flex flex-col items-center absolute top-[calc(50%_-_21px)] right-[calc(50%_-_28px)]"
+            >
+              <span class="font-bold">سطح داوری
+              </span>
               <span class="">لورم ایپسوم</span>
             </div>
             <img class="" src="../assets/images/61861316.png" alt="" />
           </div>
           <div class="relative flex justify-center">
-            <div class="flex flex-col items-center absolute top-[calc(50%_-_21px)] right-[calc(50%_-_28px)]">
-              <span class="font-bold">منبع</span>
+            <div
+              class="flex flex-col items-center absolute top-[calc(50%_-_21px)] right-[calc(50%_-_28px)]"
+            >
+              <span class="font-bold">موضوع آثار
+              </span>
               <span class="">لورم ایپسوم</span>
             </div>
             <img class="" src="../assets/images/61861316.png" alt="" />
           </div>
-          <div class="relative flex justify-center">
-            <div class="flex flex-col items-center absolute top-[calc(50%_-_21px)] right-[calc(50%_-_28px)]">
-              <span class="font-bold">جوایز</span>
-              <span class="">لورم ایپسوم</span>
-            </div>
-            <img class="" src="../assets/images/61861316.png" alt="" />
-          </div>
-          <div class="relative flex justify-center">
-            <div class="flex flex-col items-center absolute top-[calc(50%_-_21px)] right-[calc(50%_-_28px)]">
-              <span class="font-bold">نوع مسابقه</span>
-              <span class="">لورم ایپسوم</span>
-            </div>
-            <img class="" src="../assets/images/61861316.png" alt="" />
-          </div>
+        
         </div>
       </section>
 
       <footer class="relative w-full mt-32 bg-yellow p-5 text-center">
         <span class="absolute top-0 left-[calc(50%_-_88px)]">
           <div class="absolute top-3 left-8 flex gap-2 items-center z-20">
-            <div class="bg-red w-7 h-7 rounded-full flex items-center justify-center">
-              <img class="object-contain w-full h-full" src="../assets/images/Apple-Logo.png" alt="" />
+            <div
+              class="bg-red w-7 h-7 rounded-full flex items-center justify-center"
+            >
+              <img
+                class="object-contain w-full h-full"
+                src="../assets/images/Apple-Logo.png"
+                alt=""
+              />
             </div>
             <span>وبسایت همگروه</span>
           </div>
-          <img class="w-full h-full object-cover rotate-180" src="../assets/images/nav-item-mask.svg" alt="" />
+          <img
+            class="w-full h-full object-cover rotate-180"
+            src="../assets/images/nav-item-mask.svg"
+            alt=""
+          />
         </span>
         <div class="mt-11 grid grid-cols-12 gap-5 xl:container mx-auto">
           <!-- link -->
@@ -320,12 +483,17 @@
           <div class="col-span-12 sm:col-span-8 lg:col-span-4">
             <h1 class="text-18 font-bold">درباره همگروه</h1>
             <p class="h-24 overflow-auto">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون
-              و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در
-              شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
-              الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و
-              شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد
-              استفاده قرار گیرد.
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+              نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+              کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان
+              جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای
+              طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان
+              فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری
+              موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد
+              نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل
+              دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
             </p>
           </div>
           <!-- premium categories -->
@@ -338,24 +506,36 @@
             </ul>
           </div>
           <!-- licenses -->
-          <div class="col-span-12 lg:col-span-2 sm:col-span-6 flex flex-col items-center">
+          <div
+            class="col-span-12 lg:col-span-2 sm:col-span-6 flex flex-col items-center"
+          >
             <h2 class="text-18 font-bold">مجوز های سایت</h2>
             <div class="flex gap-3 items-center">
               <div class="w-[80px] h-[80px]">
                 <a href="">
-                  <img class="w-full h-full object-cover rounded-lg" src="../assets/images/561531313.jpg" alt="" />
+                  <img
+                    class="w-full h-full object-cover rounded-lg"
+                    src="../assets/images/561531313.jpg"
+                    alt=""
+                  />
                 </a>
               </div>
               <div class="w-[80px] h-[80px]">
                 <a href="">
-                  <img class="w-full h-full object-cover rounded-lg" src="../assets/images/561531313.jpg" alt="" />
+                  <img
+                    class="w-full h-full object-cover rounded-lg"
+                    src="../assets/images/561531313.jpg"
+                    alt=""
+                  />
                 </a>
               </div>
             </div>
           </div>
         </div>
         <!-- contact -->
-        <div class="xl:container mx-auto p-5 my-5 bg-brown flex gap-3 max-sm:flex-col items-center justify-between rounded-xl">
+        <div
+          class="xl:container mx-auto p-5 my-5 bg-brown flex gap-3 max-sm:flex-col items-center justify-between rounded-xl"
+        >
           <div>
             <p>راه های ارتباطی با وبسایت همگروه</p>
           </div>
@@ -363,30 +543,44 @@
             <ul class="flex gap-3 max-sm:flex-col max-sm:items-center">
               <li class="">
                 <a href="" class="flex gap-2">
-                  <span class="mdi mdi-phone-outline bg-white rounded-lg w-6 h-6 flex items-center justify-center text-red"></span>
+                  <span
+                    class="mdi mdi-phone-outline bg-white rounded-lg w-6 h-6 flex items-center justify-center text-red"
+                  ></span>
                   <span>۰۹۱۲۳۴۵۰۰۰۰</span>
                 </a>
               </li>
               <li class="">
                 <a href="" class="flex gap-2">
-                  <span class="mdi mdi-email-outline bg-white rounded-lg w-6 h-6 flex items-center justify-center text-red"></span>
+                  <span
+                    class="mdi mdi-email-outline bg-white rounded-lg w-6 h-6 flex items-center justify-center text-red"
+                  ></span>
                   <span>info@yoursite.com</span>
                 </a>
               </li>
               <li class="">
                 <a href="" class="flex gap-2">
-                  <span class="mdi mdi-map-marker-outline bg-white rounded-lg w-6 h-6 flex items-center justify-center text-red"></span>
+                  <span
+                    class="mdi mdi-map-marker-outline bg-white rounded-lg w-6 h-6 flex items-center justify-center text-red"
+                  ></span>
                   <span>قم، بلوار صدوقی، صدوقی ۵۵</span>
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="xl:container mx-auto flex max-sm:flex-col items-center justify-between">
-          <p>تمام حقوق این سایت برای وبسایت همگروه محفوظ بوده و هرگونه کپی برداری پیگیری قانونی خواهد شد.</p>
+        <div
+          class="xl:container mx-auto flex max-sm:flex-col items-center justify-between"
+        >
+          <p>
+            تمام حقوق این سایت برای وبسایت همگروه محفوظ بوده و هرگونه کپی برداری
+            پیگیری قانونی خواهد شد.
+          </p>
           <ul class="text-24 flex items-center gap-2">
             <li>
-              <a href="" class="bg-brown w-8 h-8 rounded-md flex items-center justify-center">
+              <a
+                href=""
+                class="bg-brown w-8 h-8 rounded-md flex items-center justify-center"
+              >
                 <span>
                   <svg
                     id="Iconly_Light-outline_Send"
@@ -394,27 +588,38 @@
                     xmlns="http://www.w3.org/2000/svg"
                     width="16.991"
                     height="16.991"
-                    viewBox="0 0 16.991 16.991">
+                    viewBox="0 0 16.991 16.991"
+                  >
                     <g id="Send" transform="translate(0)">
                       <path
                         id="Send-2"
                         data-name="Send"
                         d="M11.261,16.991A1.638,1.638,0,0,1,9.913,16.3l-.077-.116L6.442,10.557.8,7.085a1.684,1.684,0,0,1,.278-3l.132-.043L14.851.068A1.7,1.7,0,0,1,15.323,0a1.681,1.681,0,0,1,1.628,2.041l-.031.122L12.872,15.791A1.67,1.67,0,0,1,11.261,16.991Zm.594-12.528a.647.647,0,0,1,.387.127l.074.063a.658.658,0,0,1,.066.851l-.063.074L7.742,10.183l3.214,5.322a.358.358,0,0,0,.312.179.363.363,0,0,0,.326-.2l.027-.067L15.666,1.791a.373.373,0,0,0-.058-.333.368.368,0,0,0-.293-.15l-.038,0-.064.013L1.574,5.292a.365.365,0,0,0-.256.272.376.376,0,0,0,.109.364l.057.043L6.821,9.255l4.57-4.6A.651.651,0,0,1,11.855,4.463Z"
                         transform="translate(0)"
-                        fill="rgba(0,0,0,0.8)" />
+                        fill="rgba(0,0,0,0.8)"
+                      />
                     </g>
                   </svg>
                 </span>
               </a>
             </li>
             <li>
-              <a href="" class="mdi mdi-youtube bg-brown w-8 h-8 rounded-md flex items-center justify-center"></a>
+              <a
+                href=""
+                class="mdi mdi-youtube bg-brown w-8 h-8 rounded-md flex items-center justify-center"
+              ></a>
             </li>
             <li>
-              <a href="" class="mdi mdi-whatsapp bg-brown w-8 h-8 rounded-md flex items-center justify-center"></a>
+              <a
+                href=""
+                class="mdi mdi-whatsapp bg-brown w-8 h-8 rounded-md flex items-center justify-center"
+              ></a>
             </li>
             <li>
-              <a href="" class="mdi mdi-instagram bg-brown w-8 h-8 rounded-md flex items-center justify-center"></a>
+              <a
+                href=""
+                class="mdi mdi-instagram bg-brown w-8 h-8 rounded-md flex items-center justify-center"
+              ></a>
             </li>
           </ul>
         </div>
