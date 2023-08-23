@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>همگروه | درباره ما</title>
+    <title>همگروه | تک مسابقه</title>
 
     <!-- ------------------------------------ -->
 
@@ -57,7 +57,7 @@
   </head>
 
   <body class="farhang text-16 text-navy overflow-x-hidden">
-    <div class="header sticky top-0 z-50">
+    <div class="sticky top-0 z-50">
       <!-- user bar -->
       <div class="bg-yellow p-5">
         <div class="xl:container mx-auto flex items-center justify-between">
@@ -178,13 +178,13 @@
                 </a>
               </li>
               <li class="">
-                <a href="./competitions.html" class="">
+                <a href="./single-competition.html" class="active">
                   <span class="mdi mdi-flag-checkered"></span>
                   <span class="">مسابقات</span>
                 </a>
               </li>
               <li class="">
-                <a href="./aboutus.html" class="active">
+                <a href="./aboutus.html" class="">
                   <span class="mdi mdi-information"></span>
                   <span class="">درباره ما</span>
                 </a>
@@ -199,28 +199,14 @@
       </div>
     </div>
     <div class="wrapper flex flex-col items-center mt-10 relative">
-      <section class="">
-        <div class="xl:container p-5 grid grid-cols-12 gap-3">
+      <section class="mt-10">
+        <div class="xl:container p-5 grid lg:grid-cols-3 gap-3">
           <!-- image -->
-          <div
-            class="col-span-12 lg:col-span-3 flex items-center max-lg:justify-center"
-          >
-            <div class="w-[358px] aspect-[.7]">
-              <div
-                class="w-full h-full mask-border"
-                style="
-                  -webkit-mask-box-image-source: url('../assets/images/mask641651353.png');
-                  -webkit-mask-box-image-slice: initial;
-                  -webkit-mask-box-image-width: initial;
-                  -webkit-mask-box-image-outset: initial;
-                  -webkit-mask-box-image-repeat: initial;
-                  -webkit-mask-box-image-width:10px;
-                  display: block;
-                "
-              >
+          <div class="flex items-center justify-center">
+            <div class="w-[258px] h-[384px]">
+              <div class="w-full h-full mask-border">
                 <div
                   class="w-full h-full"
-                  mask-url="url(../assets/images/mask641651353.png)"
                 >
                   <img
                     class="w-full h-full object-cover"
@@ -231,12 +217,10 @@
               </div>
             </div>
           </div>
-          <!-- about us content -->
-          <div
-            class="col-span-12 lg:col-span-9 flex flex-col gap-3 justify-center items-start"
-          >
-            <h1 class="text-red text-32">درباره همگروه</h1>
-            <p class="">
+          <!-- match general info -->
+          <div class="flex flex-col gap-3 justify-center items-center">
+            <h1 class="text-32">اطلاعیه کلی مسابقه داستان قرآنی</h1>
+            <p class="overflow-auto h-[210px]">
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
               استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
               در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
@@ -253,53 +237,206 @@
               را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در
               زبان فارسی ایجاد کرد
             </p>
+            <a
+              href="./registermatch.html"
+              class="active:scale-90 hover:brightness-90 py-2 px-3 rounded-lg flex items-center justify-center bg-brown hover:bg-red/40"
+            >
+              <span class="text-18">ثبت نام در مسابقه</span>
+              <span class="mdi mdi-arrow-left"></span>
+            </a>
+          </div>
+          <!-- match rules -->
+
+          <div
+            class="lg:mr-auto max-lg:mx-auto max-lg:mt-32 w-[350px] h-[360px] p-5 sm:rounded-xl lg:rounded-tl-[70px] lg:rounded-bl-none bg-yellow relative"
+          >
+            <span
+              class="p-3 pr-5 bg-brown absolute -top-6 right-0 rounded-full rounded-br-none"
+              >قوانین شرکت در مسابقه</span
+            >
+            <!-- rules list swiper -->
+            <div class="">
+              <div class="rules-swiper swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <ul class="p-3 flex flex-col items-center justify-center">
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="swiper-slide">
+                    <ul class="p-3 flex flex-col items-center justify-center">
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="swiper-slide">
+                    <ul class="p-3 flex flex-col items-center justify-center">
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                      <li class="flex gap-3 items-center justify-between">
+                        <span
+                          class="bg-red/50 w-7 h-7 rounded-full flex items-center justify-center"
+                          >1</span
+                        >
+                        <p class="w-[90%]">
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
           </div>
         </div>
       </section>
-      <!-- send message -->
-      <section class="xl:container w-full p-5">
-        <div class="flex flex-col gap-2 sm:w-1/2 mx-auto">
-          <h1 class="text-red font-bold text-32">پیام به هم‌گروه</h1>
-          <p class="">
-            شما می توانید برای رفع مشکلات خود درباره کار با بخش های مختلف زیست
-            بوم مجازی هم‌گروه، فرم زیر را تکمیل تا به زودی رسیدگی شود
-          </p>
-          <div class="mt-5">
-            <form action="" class="flex flex-col gap-3">
-              <label for="" class="flex flex-col gap-3">
-                <span>نام و نام خانوادگی</span>
-                <input
-                  name="name"
-                  type="name"
-                  class="cursor-text focus-within:outline-navy bg-yellow rounded-lg p-2"
-                />
-              </label>
-              <label for="" class="flex flex-col gap-3">
-                <span>ایمیل</span>
-                <input
-                  name="email"
-                  type="email"
-                  class="cursor-text focus-within:outline-navy bg-yellow rounded-lg p-2"
-                />
-              </label>
-              <label for="" class="flex flex-col gap-3">
-                <span>توضیحات</span>
-                <textarea
-                  class="bg-yellow rounded-lg p-2 focus-within:outline-none"
-                  name="desc"
-                  id=""
-                  rows="5 "
-                ></textarea>
-              </label>
+      <!-- details -->
+      <section class="mt-16 text-center">
+        <div class="mt-16 grid sm:grid-cols-2 gap-3">
 
-              <button
-                type="submit"
-                class="active:scale-90 hover:brightness-90 max-sm:w-full bg-brown w-max mr-auto py-2 px-10 font-bold rounded-xl text-center text-18"
-              >
-                ارسال
-              </button>
-            </form>
+          <div class="relative flex justify-center">
+            <div
+              class="flex flex-col items-center absolute top-[calc(50%_-_21px)] right-[calc(50%_-_28px)]"
+            >
+              <span class="font-bold">سطح داوری
+              </span>
+              <span class="">لورم ایپسوم</span>
+            </div>
+            <img class="" src="../assets/images/61861316.png" alt="" />
           </div>
+          <div class="relative flex justify-center">
+            <div
+              class="flex flex-col items-center absolute top-[calc(50%_-_21px)] right-[calc(50%_-_28px)]"
+            >
+              <span class="font-bold">موضوع آثار
+              </span>
+              <span class="">لورم ایپسوم</span>
+            </div>
+            <img class="" src="../assets/images/61861316.png" alt="" />
+          </div>
+        
         </div>
       </section>
 
@@ -494,24 +631,13 @@
     <script src="../assets/js/swiper-bundle.min.js"></script>
     <script src="../assets/js/aos.js"></script>
     <script src="../assets/js/main.js"></script>
-
     <script>
-      const activity_image_swiper = new Swiper(".activity-image-swiper", {
-        slidesperView: 1,
-        autoplay: true,
-        watchSlidesProgress: true,
-        allowTouchMove: false,
-      });
-      const activity_text_swiper = new Swiper(".activity-text-swiper", {
-        slidesperView: 1,
-        autoplay: true,
-        navigation: {
-          nextEl: ".next-slide",
-          prevEl: ".prev-slide",
+      const rules_swiper = new Swiper(".rules-swiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
         },
-        thumbs: {
-          swiper: activity_image_swiper,
-        },
+        autoplay: true,
       });
     </script>
   </body>
