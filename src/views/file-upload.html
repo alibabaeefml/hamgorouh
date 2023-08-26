@@ -203,14 +203,14 @@
     <div class="wrapper flex flex-col items-center mt-10 relative">
       <!-- exam -->
       <section
-        class="flex max-sm:flex-col items-center w-full p-10 xl:container justify-between gap-3"
+        class="flex max-sm:flex-col w-full p-sm-10 p-3 xl:container justify-between gap-3"
       >
         <!-- exam levels -->
-        <div class="w-[90%] sm:w-[20%] relative overflow-hidden">
-          <span
-            class="border-dashed border-[1px] absolute z-[-1] h-full right-[15px]"
-          ></span>
-          <ul class="flex flex-col gap-8">
+        <div class="w-[90%] sm:w-[20%] h-full sticky max-sm:static top-[200px]">
+          <ul class="flex flex-col gap-8 relative overflow-hidden">
+            <span
+              class="border-dashed border-[1px] absolute z-[-1] h-full right-[15px]"
+            ></span>
             <li>
               <a href="" class="flex items-center gap-3">
                 <span
@@ -251,20 +251,19 @@
         </div>
         <!-- exam view -->
         <div
-          class="w-full max-sm:p-3 sm:w-[80%] flex flex-col sm:items-center justify-center"
+          class="w-full sm:w-[80%] flex flex-col sm:items-center justify-center"
         >
-          <div class="w-sm-full w-1/2">
+          <div class="w-full w-sm-1/2">
             <p class="text-18 font-bold mt-2">رشته مربوط را انتخاب نمایید</p>
             <select
               name=""
               id="reference_field"
               class="w-full border-2 border-renavyd p-2 rounded-2xl"
-              onchange="set_reference_data()"
             >
               <option value="0">رشته 1</option>
               <option value="0">رشته 2</option>
             </select>
-            <div class="mt-5 w-full">
+            <div class="mt-5 w-full h-[300px]">
               <video
                 class="object-cover w-full h-full rounded-2xl"
                 src
@@ -276,42 +275,34 @@
           <p class="text-18 font-bold mt-5">
             کاربر گرامی فایل خود را بارگذاری کنید
           </p>
+          <p class="mt-2">فرمت های قابل قبول</p>
+          <div class="border-2 border-navy p-3 rounded-xl">
+            <p class="text-14 font-bold">jpg,png,...</p>
+          </div>
           <div
-            class="mt-5 h-[400px] relative bg-[#F7F5EB] rounded-3xl rounded-bl-none sm:w-4/6 p-16"
+            class="mt-5 h-[400px] relative bg-yellow rounded-3xl rounded-bl-none sm:w-4/6 p-10 max-sm:p-3"
           >
             <form
               action=""
+              enctype="multipart/form-data"
               class="w-full h-full rounded-xl duration-300 bg-white/30 hover:bg-white border-dashed border-2"
             >
+              <!-- upload -->
               <label
                 class="cursor-pointer w-full h-full flex items-center justify-center"
-                upload_panel
+                id="upload_view"
               >
                 <div class="flex flex-col items-center">
                   <span class="mdi mdi-upload"></span>
                   <h2 class="select-none">بارگذاری فایل</h2>
                 </div>
-                <input
-                  class="hidden"
-                  id="video_file"
-                  type="file"
-                  name="video_file"
-                />
+                <input class="hidden" id="file_input" type="file" name="file" />
               </label>
-              <div class="w-full h-full hidden relative" preview_panel>
-                <button
-                  title="حذف فایل منتخب"
-                  class="mdi mdi-delete active:scale-90 text-32 hover:brightness-90 text-red bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-full absolute z-10 top-5 right-5"
-                  type="button"
-                  onclick="$('[upload_panel]').show();$('[preview_panel]').hide();$('form').get(0).reset();$('[type=submit]').attr('disabled','disabled')"
-                ></button>
-                <video
-                  class="object-cover w-full h-full"
-                  controls
-                  uploaded_video
-                  src=""
-                ></video>
-              </div>
+              <!-- preview -->
+              <div
+                class="w-full h-full relative hidden"
+                id="preview_view"
+              ></div>
               <button
                 type="submit"
                 disabled="true"
@@ -320,6 +311,25 @@
                 ارسال
               </button>
             </form>
+          </div>
+        </div>
+      </section>
+      <!-- exam desc -->
+      <section class="w-full xl:container p-sm-10 p-3 mt-16">
+        <div
+          class="flex max-sm:flex-col w-full gap-3 bg-yellow p-3 rounded-2xl"
+        >
+       
+          <!-- if: video doesn't exist => remove class w-sm-2/3  -->
+          <div class="w-sm-2/3 w-full">
+            <p>...توضیحات رشته</p>
+          </div>
+          <div class="w-full w-sm-1/3 h-[300px]">
+            <video
+              src=""
+              controls
+              class="object-cover w-full h-full rounded-3xl"
+            ></video>
           </div>
         </div>
       </section>
@@ -516,34 +526,91 @@
 
     <script src="../assets/js/main.js"></script>
     <script>
-      // from database
-      const user_data = {
-        first_name: "علی",
-        last_name: "بابائی",
-        national_code: "331035135",
-      };
-      // set user-info view
-      $.each(user_data, (key, value) => {
-        $(`[${key}]`).text(value);
-      });
+      const show_preview = (file, url, file_id = null) => {
+        $("#preview_view").removeClass("hidden");
+        $("#upload_view").addClass("hidden");
+        let preview;
 
-      $("form").submit((e) => window.location.assign("/main.html"));
-
-      const input = $("[type=file]").get(0);
-      input.onchange = () => {
-        if (input.files && input.files[0]) {
-          $("[disabled]").removeAttr("disabled");
-          $("[upload_panel]").hide();
-          $("[preview_panel]").show();
-          var reader = new FileReader();
-
-          reader.onload = function (e) {
-            $("[uploaded_video]").attr("src", e.target.result);
-          };
-
-          reader.readAsDataURL(input.files[0]);
+        if (file.type.includes("image")) {
+          preview = document.createElement("img");
+          preview.className = "w-full h-full object-cover";
+          preview.src = url;
+        } else if (file.type.includes("video")) {
+          preview = document.createElement("video");
+          preview.className = "w-full h-full object-cover";
+          preview.controls = true;
+          preview.src = url;
+        } else {
+          preview = document.createElement("div");
+          preview.className = "flex-center h-full";
+          preview.innerHTML = `<i class='mdi mdi-file text-red' ></i></span> <span>${file.name}</span>`;
         }
+        $("[download]").attr("href", url);
+        $("#preview_view").append(
+          `<div class="absolute m-3 flex items-center gap-3 z-20">
+                  <a
+                    href="${url}"
+                    download
+                    class="bg-red text-yellow rounded-full flex-center w-8 h-8  active:scale-90 shadow-md"
+                  >
+                    <i class="mdi mdi-download"></i>
+                  </a>
+                  ${
+                    file_id
+                      ? ` <button
+                    type="button"
+                    class="bg-red text-yellow rounded-full flex-center w-8 h-8  active:scale-90 shadow-md"
+                    onclick="delete_file(${file_id})"
+                  >
+                    <i class="mdi mdi-delete"></i>
+                  </button>`
+                      : `  <button
+                    type="button"
+                    class="bg-red text-yellow rounded-full flex-center w-8 h-8  active:scale-90 shadow-md"
+                    onclick="edit_file()"
+                  >
+                    <i class="mdi mdi-pencil"></i>
+                  </button>`
+                  }
+                
+                </div>`
+        );
+
+        $("#preview_view").append(preview);
       };
+      const delete_file = (id) => {
+        $.ajax({
+          url: `/file-path/${id}`,
+          type: "DELETE",
+          success: () => window.location.reload(),
+          error: () => alert("حذف فایل با خطا مواجه شد"),
+        });
+      };
+      const edit_file = () => {
+        $("#preview_view,#upload_view").toggleClass("hidden");
+        $("#preview_view").html("");
+        $("#file_input").trigger("click");
+        $("#file_input").val("");
+        $("[type=submit]").attr("disabled", true);
+      };
+      $(() => {
+        const file_input = $("[type=file]").get(0);
+
+        file_input.onchange = () => {
+          const file = file_input.files[0];
+          if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+              $("[type=submit]").removeAttr("disabled");
+              const result = e.target.result;
+              show_preview(file, result);
+            };
+
+            reader.readAsDataURL(file);
+          }
+        };
+      });
     </script>
   </body>
 </html>
