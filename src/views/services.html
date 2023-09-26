@@ -10,7 +10,37 @@
     <!-- ------------------------------------ -->
 
     <!-- styles -->
-
+    <script src="../assets/js/tailwind3.3.2.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brown: "#EAE0DA",
+              yellow: "#F7F5EB",
+              navy: "#12263A",
+              red: "#FF4A4A",
+              gray: "#A2A2A1",
+              green: "#38C972",
+            },
+            fontSize: {
+              32: [
+                "32px",
+                {
+                  fontWeight: "700",
+                },
+              ],
+              24: "24px",
+              20: "20px",
+              18: "18px",
+              16: "16px",
+              14: "14px",
+              12: "12px",
+            },
+          },
+        },
+      };
+    </script>
     <!-- animate on scroll -->
     <link rel="stylesheet" href="../assets/css/aos.css" />
 
@@ -23,7 +53,7 @@
     <!-- main style file -->
     <link rel="stylesheet" href="../assets/css/main.css" />
 
-    <link rel="stylesheet" href="../../dist/output.css" />
+
 
     <style>
         .discount-cats-swiper .swiper-slide button {
